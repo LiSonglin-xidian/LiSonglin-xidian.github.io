@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://lisonglin.tk</id>
     <title>想不想该不该的博客</title>
-    <updated>2020-07-02T10:18:55.066Z</updated>
+    <updated>2020-07-02T12:42:04.747Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://lisonglin.tk"/>
     <link rel="self" href="https://lisonglin.tk/atom.xml"/>
@@ -16,17 +16,49 @@
         <link href="https://lisonglin.tk/post/gridea-jian-dan-jiao-cheng-freenomcloudflare/">
         </link>
         <updated>2020-07-02T09:54:21.000Z</updated>
-        <content type="html"><![CDATA[<ol>
+        <content type="html"><![CDATA[<h1 id="git">git</h1>
+<ol>
 <li>下载git（Gridea是基于git的所以需要先安装git）</li>
 <li>安装git（直接一直点击下一步就可以了）</li>
+</ol>
+<h1 id="gridea">Gridea</h1>
+<ol start="3">
 <li>下载Gridea</li>
 <li>安装Gridea（默认或者更换你喜欢的路径）</li>
 <li>创建 GitHub 账号，并创建一个仓库 Token。<a href="https://gridea.dev/gridea-start/">5-8步参考地址</a><br>
   点击GitHub，进行注册。登录 GitHub 之后，点击这里创建一个 Token，<strong>勾选上 repo 的相关权限即可</strong>。生成之后记得把 Token 复制到你的本地，因为一旦关闭网页将不能再看到它。<br>
   小白之创建仓库方法：<img src="https://lisonglin.tk/post-images/1593684426205.jpg" alt="" loading="lazy"></li>
 <li>创建仓库，存放构建后的网站文件。创建一个公开仓库，名为<strong>用户名.github.io</strong>。（将<strong>用户名</strong>替换为你的 GitHub 用户名）</li>
-<li>进入 Gridea 进行远程设置。按照<a href="https://gridea.dev/gridea-start/">教程</a>示例进行设置，然后点击「检测远程链接」，进行配置检查。</li>
-<li>同步。点击 Gridea 中的 同步按钮即可。初次部署等待几分钟之后就可以去浏览器访问了，默认地址为你在第 7步所填写的域名（https://用户名.github.io）。到这里就完成一个静态博客的搭建了，可以写博客同步到你的域名了。以下为使用Freenom申请免费域名，Cloudflare域名解析；即可以使用你申请的免费域名（Freenom）访问你的Gridea博客。</li>
+<li>进入 Gridea 进行远程设置。按照<a href="https://gridea.dev/gridea-start/">教程</a>示例进行设置，然后点击「检测远程链接」，进行配置检查，邮箱为注册github时使用的邮箱。</li>
+<li>同步。点击 Gridea 中的 同步按钮即可。初次部署等待几分钟之后就可以去浏览器访问了，默认地址为你在第 7步所填写的域名（https://用户名.github.io）。到这里就完成一个静态博客的搭建了，可以写博客同步到你的域名了。以下为使用Freenom申请免费域名，Cloudflare域名解析；即可以使用你申请的免费域名（Freenom）访问你的Gridea博客。<br>
+附录：修改主题，打开官网，点击主题，点击下载，在github界面点击下载zip，下载完成后解压，修改文件名称为主题名称，将该文件夹放入Gridea主题文件夹，默认路径为（C:\Users\Desktop\Documents\Gridea\themes）</li>
+</ol>
+<h1 id="freenom">Freenom</h1>
+<ol>
+<li>打开并注册Freenom<a href="https://www.jianshu.com/p/e02371079daa">注册参考链接</a><br>
+  打开<a href="https://www.freenom.com/zu/index.html?lang=zu">Freenom官网</a>，在网站文本框输入你想要的域名（例如baidu.tk）然后点击“检查可用性”</li>
+<li>更改周期（period）选择最长的免费时长12个月</li>
+<li>输入邮箱，注册Freenom账号</li>
+<li>进入邮箱查看Freenom发来的确认邮件</li>
+<li>点击邮箱中的链接完成注册</li>
+<li>进入我的域名（My Domains）查看刚刚注册的域名，到此Freenom完成</li>
+</ol>
+<h1 id="https修改">HTTPS修改</h1>
+<ol start="15">
+<li>打开github-点击注册的仓库名-点击设置-下拉找到Enforce HTTPS选中对话框（注：此步骤为）</li>
+</ol>
+<h1 id="cloudflare">Cloudflare</h1>
+<ol start="16">
+<li>Cloudflare域名解析，打开<a href="https://www.cloudflare.com/">官网</a>，点击注册<a href="">参考链接</a></li>
+<li>输入邮箱创建账号Cloudflare会发送邮件到注册邮箱，登陆邮箱点击确认邮箱</li>
+<li>点击添加节点（Add site），添加在Freenom中注册的免费域名，点击下一步</li>
+<li>还是选择免费DNS</li>
+<li>在<strong>类型</strong>中选择CNAME；<strong>名称</strong>中输入@；目标中输入你的github域名即（<strong>用户名</strong>.github.io）</li>
+<li>TTL选项默认选择&quot;Auto&quot;即可。&quot;Proxied&quot;选项可根据需求选择是只进行域名解析&quot;DNS only&quot;还是需要通过Cloudflare进行代理&quot;Proxied&quot;，完成以上设置后，点击&quot;Add Record&quot;</li>
+<li>接着，在Cloudflare的Overview界面，有两个域名解析服务器的网址，复制这两个网址（复制cloudflare名称服务器NS值，打开<strong>Freenom</strong>-登陆-点击<strong>services</strong>,点击<strong>Management Tools</strong>，点击<strong>Use custom nameservers (enter below)</strong>，在Namesever 1中输入复制内容；以相同步骤复制第二个NS值填入Namesever 2）</li>
+<li>复制完成后点击Change Namesevers 完成对域名替换</li>
+<li>修改完成后，等待几分钟，会收到来自CloudFlare的邮件，提示更新成功，即完成Cloudflare域名解析的配置工作</li>
+<li>结束</li>
 </ol>
 ]]></content>
     </entry>
