@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://lisonglin.tk</id>
     <title>想不想该不该的博客</title>
-    <updated>2020-07-02T13:13:18.122Z</updated>
+    <updated>2020-07-03T09:17:52.926Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://lisonglin.tk"/>
     <link rel="self" href="https://lisonglin.tk/atom.xml"/>
@@ -34,7 +34,7 @@
 附录：修改主题，打开官网，点击主题，点击下载，在github界面点击下载zip，下载完成后解压，修改文件名称为主题名称，将该文件夹放入Gridea主题文件夹，默认路径为（C:\Users\Desktop\Documents\Gridea\themes）</li>
 </ol>
 <h1 id="freenom">Freenom</h1>
-<ol>
+<ol start="9">
 <li>打开并注册Freenom<a href="https://www.jianshu.com/p/e02371079daa">注册参考链接</a><br>
   打开<a href="https://www.freenom.com/zu/index.html?lang=zu">Freenom官网</a>，在网站文本框输入你想要的域名（例如baidu.tk）然后点击“检查可用性”</li>
 <li>更改周期（period）选择最长的免费时长12个月</li>
@@ -49,7 +49,7 @@
 </ol>
 <h1 id="cloudflare">Cloudflare</h1>
 <ol start="16">
-<li>Cloudflare域名解析，打开<a href="https://www.cloudflare.com/">官网</a>，点击注册<a href="">参考链接</a></li>
+<li>Cloudflare域名解析，打开<a href="https://www.cloudflare.com/">官网</a>，点击注册</li>
 <li>输入邮箱创建账号Cloudflare会发送邮件到注册邮箱，登陆邮箱点击确认邮箱</li>
 <li>点击添加节点（Add site），添加在Freenom中注册的免费域名，点击下一步</li>
 <li>还是选择免费DNS</li>
