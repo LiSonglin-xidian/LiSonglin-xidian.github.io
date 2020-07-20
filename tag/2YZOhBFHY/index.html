@@ -1,40 +1,1011 @@
 <!DOCTYPE html>
+<html>
+
 <head>
-<link rel="shortcut icon" href="https://lisonglin.tk/favicon.ico" type="image/x-icon" /><meta name="viewport"content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/><meta name="apple-mobile-web-app-capable"content="yes"/><meta name="apple-mobile-web-app-status-bar-style"content="black"/><meta name="format-detection"content="telephone=no"/><meta name="renderer"content="webkit"><meta name="description"content="温故而知新"><meta charset="UTF-8"><title>边界条件 | 想不想该不该的博客</title>
-<link href="https://lisonglin.tk/styles/main.css" type="text/css" rel="stylesheet" /><link href="https://at.alicdn.com/t/font_1621793_zatzzgvf30g.css" type="text/css" rel="stylesheet" /><link rel="stylesheet" href="https://lisonglin.tk/media/css/katex.css"><script async src="https://cdn.jsdelivr.net/npm/busuanzi@2.3.0/bsz.pure.mini.min.js"></script><script src="https://lisonglin.tk/media/js/magnify.min.js"></script><script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js"></script><script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body);"></script>
-<script type="text/javascript">function btn_toggle(){document.getElementById("hn").classList.contains("no-js")?document.getElementById("hn").classList.remove("no-js"):document.getElementById("hn").classList.add("no-js")}</script>
-  
+  <meta charset="UTF-8" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<meta name="keywords" content="Gridea静态个人博客">
+<meta name="description" content="温故而知新">
+<meta name="theme-color" content="#000">
+<title>想不想该不该的博客</title>
+<link rel="shortcut icon" href="/favicon.ico?v=1595253943656">
+<link rel="stylesheet" href="/media/css/pisces.css">
+<link rel="stylesheet" href="/media/fonts/font-awesome.css">
+<link
+  href="//fonts.googleapis.com/css?family=Monda:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Rosario:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext"
+  rel="stylesheet" type="text/css">
+
+<link href="/media/hljs/styles/default.css"
+  rel="stylesheet">
+
+<link rel="stylesheet" href="/styles/main.css">
+
+<script src="/media/hljs/highlight.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.0/velocity.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.0/velocity.ui.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css"
+  integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq" crossorigin="anonymous">
+
+
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js"
+  integrity="sha384-y23I5Q6l+B6vatafAwxRu/0oK/79VlbSz7Q9aiSZUvyWYIYsd+qj+o24G5ZU2zJz" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js"
+  integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous"
+  onload="renderMathInElement(document.body);"></script>
+
+
+
+
+
 </head>
+
 <body>
-<div class="progress"></div><style>.progress{background:linear-gradient(to right,#87ceeb var(--scroll),transparent 0);background-repeat:no-repeat;position:fixed;width:100%;height:4px;z-index:1}</style><div class="darkmode-background"></div><div class="darkmode-layer"></div>
-<noscript><p class="warn" >本页面需要浏览器支持（启用）JavaScript</p></noscript><div class="header"><div class="logo_title"><div class="title animated fadeInDown"><a href="https://lisonglin.tk"><img alt="logo" style="display:inline-block;" src="https://lisonglin.tk/images/avatar.png"/></a><h1 title="想不想该不该的博客" class="weaklink"><a  href="/">想不想该不该的博客</a></h1>
+  <div class="head-top-line"></div>
+  <div class="header-box">
+    
+<div class="pisces">
+  <header class="header  ">
+    <div class="blog-header box-shadow-wrapper bg-color " id="header">
+      <div class="nav-toggle" id="nav_toggle">
+        <div class="toggle-box">
+          <div class="line line-top"></div>
+          <div class="line line-center"></div>
+          <div class="line line-bottom"></div>
+        </div>
+      </div>
+      <div class="site-meta">       
+        <div class="site-title">
+          
+            <a href="/" class="brand">
+              <span>想不想该不该的博客</span>
+            </a>  
+          
+        </div>
+        
+          <p class="subtitle">现龙在田，天下文明</p>
+        
+      </div>
+      <nav class="site-nav" id="site_nav">
+        <ul id="nav_ul">
+          
+            
+            
+              
+            
+            <li class="nav-item ">
+              
+              
+                <a href="/" target="_self">
+                  <i class="fa fa-home"></i> 首页
+                </a>
+              
+            </li>
+          
+            
+            
+              
+            
+            <li class="nav-item ">
+              
+              
+                <a href="/archives/" target="_self">
+                  <i class="fa fa-archive"></i> 归档
+                </a>
+              
+            </li>
+          
+            
+            
+              
+            
+            <li class="nav-item ">
+              
+              
+                <a href="/tags/" target="_self">
+                  <i class="fa fa-tags"></i> 标签
+                </a>
+              
+            </li>
+          
+            
+            
+              
+            
+            <li class="nav-item ">
+              
+              
+                <a href="/post/about/" target="_self">
+                  <i class="fa fa-user"></i> 关于
+                </a>
+              
+            </li>
+          
+          
+            
+              <li class="nav-item ">
+                <a href="/friends/" target="_self">
+                  
+                    <i class="fa fa-address-book"></i> 友情链接
+                  
+                </a>
+              </li>
+            
+          
+          
+            <li id="fa_search" class="nav-item">
+              <a href="javascript:void(0);">
+                <i class="fa fa-search"></i> <span class="language" data-lan="search">搜索</span>
+              </a>
+            </li>
+          
+        </ul>
+      </nav>
+    </div>
+  </header>
+</div>
 
-<div class="navbar weaklink">
-<div class="normal_nav">
-<div class="bitcron_nav_container"><div class="bitcron_nav"><div class="bitcron_nav"><div style="display:flex;justify-content:center;"><nav class="mixed_site_nav_wrap site_nav_wrap"><ul class="mixed_site_nav site_nav sm sm-base">	<li><a id="d2ef19af68cc211e98f8a0242ac110003" href="/" class="selected active current nav__item" >首页</a></li><li><a id="d2ef19af68cc211e98f8a0242ac110003" href="/archives" class="selected active current nav__item" >归档</a></li><li><a id="d2ef19af68cc211e98f8a0242ac110003" href="/tags" class="selected active current nav__item" >标签</a></li><li><a id="d2ef19af68cc211e98f8a0242ac110003" href="/post/about" class="selected active current nav__item" >关于</a></li></ul></nav>
-<div style="float:right;margin-top:1em"><form id="gridea-search-form" data-update="1578893743252" action="/search/index.html"><input class="search-input" autocomplete="off" spellcheck="false" name="q" placeholder="Search..."></form></div><div style="margin-left:0.5em;margin-top:1.2em"><input id="switch_default" onclick="mobileBtn()" type="checkbox" class="switch_default"><label for="switch_default" class="toggleBtn"></label></div></div>
-<div class="clear clear_nav_inline_end"></div></div></div><div class="clear clear_nav_end"></div></div></div><div class="hamberger" href="javascript:void(0)" onclick="btn_toggle();"><i class="iconfont icon-category"></i></div></div></div></div>
-<div id="hn" class="no-js hidden_nav animated fadeInDown"><div class="bitcron_nav_container"><div class="bitcron_nav"><nav class="mixed_site_nav_wrap site_nav_wrap"><ul class="mixed_site_nav site_nav sm sm-base">	<li><a id="d2ef19af68cc211e98f8a0242ac110003" href="/" class="selected active current nav__item" >首页</a></li><li><a id="d2ef19af68cc211e98f8a0242ac110003" href="/archives" class="selected active current nav__item" >归档</a></li><li><a id="d2ef19af68cc211e98f8a0242ac110003" href="/tags" class="selected active current nav__item" >标签</a></li><li><a id="d2ef19af68cc211e98f8a0242ac110003" href="/post/about" class="selected active current nav__item" >关于</a></li></ul><div class="clear clear_nav_inline_end"></div></nav></div><div class="clear clear_nav_end"></div></div>
-<div style="display:flex;justify-content:center;inline-block;text-align:center;margin-top:7%"><div><form id="gridea-search-form" data-update="1595234279840" action="/search/index.html"><input class="search-input" autocomplete="off" spellcheck="false" name="q"  placeholder="Search..." /></form></div><div style="margin-left:0.5em"><input id="switch_default_h" onclick="mobileBtn()" type="checkbox" class="switch_default"><label for="switch_default" class="toggleBtn"></label></div></div>
-</div></div>
-<script>function enableDarkmode(){document.body.classList.add("darkmode"),document.getElementById("switch_default").checked=1,document.getElementById("switch_default_h").checked=1}function removeDarkmode(){document.body.classList.remove("darkmode"),document.getElementById("switch_default").checked=0,document.getElementById("switch_default_h").checked=0}function getCookie(a){var b,c=new RegExp("(^| )"+a+"=([^;]*)(;|$)");return(b=document.cookie.match(c))?unescape(b[2]):null}cookie=getCookie("darkmode"),"enable"==cookie&&enableDarkmode(),window.matchMedia("(prefers-color-scheme: dark)").matches&&"disable"!==cookie&&(enableDarkmode(),document.cookie="darkmode=enable; path=/");var mobileBtn=function(){1==document.getElementById("switch_default").checked?(enableDarkmode(),document.cookie="darkmode=enable; path=/"):(removeDarkmode(),document.cookie="darkmode=disable; path=/")};</script>
+<script type="text/javascript"> 
+ 
+  let showNav = true;
 
-<div class="main"><div class="main-inner"><div class="content"><div class="round-shape-one"></div><div class="post_list" >
+  let navToggle = document.querySelector('#nav_toggle'),
+  siteNav = document.querySelector('#site_nav');
+  
+  function navClick() {
+    let sideBar = document.querySelector('.sidebar');
+    let navUl = document.querySelector('#nav_ul');
+    navToggle.classList.toggle('nav-toggle-active');
+    siteNav.classList.toggle('nav-menu-active');
+    if (siteNav.classList.contains('nav-menu-active')) {
+      siteNav.style = "height: " + (navUl.children.length * 42) +"px !important";
+    } else {
+      siteNav.style = "";
+    }
+  }
 
-<div class="post">
-
-<div class="post_title weaklink"><h2><a href="https://lisonglin.tk/post/comsol-bian-jie-tiao-jian/">Comsol边界条件</a></h2></div>
-<div class="post_content markdown"><div class="p_part"><p><p><strong>固体物理学</strong>，<strong>传热</strong>，<strong>压力声学</strong>，<strong>电流</strong>物理场下的<strong>狄氏</strong>、<strong>纽曼</strong>、<strong>洛平</strong>这三类边界条件。</p>
-</p></div></div>
-<div class="post_footer"><section class="info weaklink"><i class="iconfont icon-calendar"></i><span style="margin-right:15px">2020-07-04</span><i class="iconfont icon-category"></i><span class="weaklink" style="margin-right:13px"><a href="https://lisonglin.tk/tag/2YZOhBFHY/"class="tag">边界条件</a>| <a href="https://lisonglin.tk/tag/6C4nNnAOw/"class="tag">Comsol</a></span><i class="iconfont icon-caret-down"></i><span class="weaklink"style="margin-right:20px;">1608字</span><i class="iconfont icon-naozhong"></i><span class="weaklink"style="margin-right:15px;">6 min read</span></section>
-</div></div>
-	
-<div class="round-shape-one"></div><div class="paginator pager pagination"><div style="clear:both;height:0;"></div></div></div></div></div></div>
-<a id="scrollUp" href="#top" style="position: fixed; z-index: 2147483647; display: block;"></a><div class="footer animated fadeInDown"><div class="site_footer"><div class="mysocials"><div class="my_socials"></div></div><div class="copyright"id="copyright">Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>Copyright © 2018-2020 <a href="https://lisonglin.tk" style="margin:0;">想不想该不该的博客</a>.</div>
-<span style="display: inline;margin-right:15px;">👁<strong><span id="busuanzi_value_site_uv"></span></strong></span><span id="busuanzi_container_page_pv" style="display: inline;"><span>📚<strong>5</strong> posts</span></div></div>
-<script>
-console.log("\n %c \u26a1Theme: Bitcron-pro Author's Blog:https://blog.blinkstar.cn  Writen By Serence  \n\n", "color: #ffffff; background: rgba(49, 49, 49, 0.85); padding:5px 0;border-radius:5px;", );
+  navToggle.addEventListener('click',navClick);  
 </script>
-<script src="https://cdn.jsdelivr.net/npm/instant.page@3.0.0/instantpage.min.js" type="module" defer></script>
+  </div>
+  <div class="main-continer">
+    
+    <div
+      class="section-layout  pisces">
+      <div class="section-layout-wrapper">
+        <div id="sidebarMeta" class="sidebar">
+    
+<div class="sidebar-wrapper box-shadow-wrapper bg-color">
+  <div class="sidebar-item">
+    <img class="site-author-image right-motion" src="/images/avatar.png"/>
+    <p class="site-author-name">想不想该不该</p>
+    
+  </div>
+  <div class="sidebar-item side-item-stat right-motion">
+    <div class="sidebar-item-box">
+      <a href="/archives/">
+        
+        <span class="site-item-stat-count">4</span>
+        <span class="site-item-stat-name language" data-lan="article">文章</span>
+      </a>
+    </div>
+    <div class="sidebar-item-box">
+      <a href="">
+        <span class="site-item-stat-count">5</span>
+        <span class="site-item-stat-name language" data-lan="category">分类</span>
+      </a>
+    </div>
+    <div class="sidebar-item-box">
+      <a href="/tags/">
+        <span class="site-item-stat-count">5</span>
+        <span class="site-item-stat-name language" data-lan="tag">标签</span>
+      </a>
+    </div>
+  </div>
+  
+    
+  
+  
+
+
+
+</div>
+</div>
+<script>
+  let sidebarMeta = document.querySelector('#sidebarMeta');
+  let scheme = 'pisces';
+  let sidebarWrapper = document.querySelector('.sidebar-wrapper');
+  if (sidebarMeta && (scheme === 'pisces' || scheme === 'gemini')) {
+    document.addEventListener('scroll', function(e) {
+      if (document.scrollingElement.scrollTop > parseInt(sidebarMeta.style.marginTop) + 10) {
+        sidebarWrapper.classList.add('home-sidebar-fixed')
+      } else {
+        sidebarWrapper.classList.remove('home-sidebar-fixed')
+      }
+    });
+  }
+  </script>
+        <div class="section-box tag-line box-shadow-wrapper">
+          <section class="section tags-section posts-expand bg-color">
+            <div class="padding-wrapper">
+  <div class="tag-timeline-box">
+    <div class="tag-timeline-wrapper">
+      <div class="tag-timeline-title">
+        <h2>
+          边界条件
+          <small class="language" data-lan="tag">标签</small>
+        </h2>
+      </div>
+      
+      
+      
+      
+      
+      <a href="https://lisonglin.tk/post/comsol-bian-jie-tiao-jian/">
+        <div class="motion-warpper">
+          <div class="tag-post-node">
+            <h1>
+              07-04
+              <small>Comsol边界条件</small>
+            </h1>
+          </div>
+        </div>
+      </a>
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    </div>
+  </div>
+</div>
+          </section>
+        </div>
+      </div>
+    </div>
+    <div class="footer-box">
+  <footer class="footer">
+    <div class="copyright">
+      Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | © 2019-2020 Theme By <a
+        href="https://github.com/hsxyhao/gridea-theme-next" target="_blank">HsxyHao</a>
+    </div>
+    <div class="poweredby">
+      Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
+    </div>
+  </footer>
+  
+  
+  <div class="pisces back-to-top" id="back_to_top">
+    <i class="fa fa-arrow-up"></i>
+    
+    <span class="scrollpercent">
+      <span id="back_to_top_text">0</span>%
+    </span>
+    
+  </div>
+  
+  
+  
+  <div class="bg-img">
+    <img src="C:\Users\Desktop\Documents\Gridea\themes\next\assets\media\images\picture" />
+  </div>
+  
+  
+  
+  
+</div>
+<script>
+
+  let sideBarOpen = 'sidebar-open';
+  let body = document.body;
+  let back2Top = document.querySelector('#back_to_top'),
+    back2TopText = document.querySelector('#back_to_top_text'),
+    drawerBox = document.querySelector('#drawer_box'),
+    rightSideBar = document.querySelector('.sidebar'),
+    viewport = document.querySelector('body');
+
+  function scrollAnimation(currentY, targetY) {
+
+    let needScrollTop = targetY - currentY
+    let _currentY = currentY
+    setTimeout(() => {
+      const dist = Math.ceil(needScrollTop / 10)
+      _currentY += dist
+      window.scrollTo(_currentY, currentY)
+      if (needScrollTop > 10 || needScrollTop < -10) {
+        scrollAnimation(_currentY, targetY)
+      } else {
+        window.scrollTo(_currentY, targetY)
+      }
+    }, 1)
+  }
+
+  back2Top.addEventListener("click", function (e) {
+    scrollAnimation(document.scrollingElement.scrollTop, 0);
+    e.stopPropagation();
+    return false;
+  });
+
+  window.addEventListener('scroll', function (e) {
+    let percent = document.scrollingElement.scrollTop / (document.scrollingElement.scrollHeight - document.scrollingElement.clientHeight) * 100;
+    if (percent > 1 && !back2Top.classList.contains('back-top-active')) {
+      back2Top.classList.add('back-top-active');
+    }
+    if (percent == 0) {
+      back2Top.classList.remove('back-top-active');
+    }
+    if (back2TopText) {
+      back2TopText.textContent = Math.floor(percent);
+    }
+  });
+
+
+  let hasCacu = false;
+  window.onresize = function () {
+    calcuHeight();
+  }
+
+  function calcuHeight() {
+    // 动态调整站点概览高度
+    if (!hasCacu && back2Top.classList.contains('pisces') || back2Top.classList.contains('gemini')) {
+      let sideBar = document.querySelector('.sidebar');
+      let navUl = document.querySelector('#site_nav');
+      sideBar.style = 'margin-top:' + (navUl.offsetHeight + navUl.offsetTop + 15) + 'px;';
+      hasCacu = true;
+    }
+  }
+  calcuHeight();
+
+  let open = false, MOTION_TIME = 300, RIGHT_MOVE_DIS = '320px';
+
+  if (drawerBox) {
+    let rightMotions = document.querySelectorAll('.right-motion');
+    let right = drawerBox.classList.contains('right');
+
+    let transitionDir = right ? "transition.slideRightIn" : "transition.slideLeftIn";
+
+    let openProp, closeProp;
+    if (right) {
+      openProp = {
+        paddingRight: RIGHT_MOVE_DIS
+      };
+      closeProp = {
+        paddingRight: '0px'
+      };
+    } else {
+      openProp = {
+        paddingLeft: RIGHT_MOVE_DIS
+      };
+      closeProp = {
+        paddingLeft: '0px'
+      };
+    }
+
+    drawerBox.onclick = function () {
+      open = !open;
+      window.Velocity(rightSideBar, 'stop');
+      window.Velocity(viewport, 'stop');
+      window.Velocity(rightMotions, 'stop');
+      if (open) {
+        window.Velocity(rightSideBar, {
+          width: RIGHT_MOVE_DIS
+        }, {
+          duration: MOTION_TIME,
+          begin: function () {
+            window.Velocity(rightMotions, transitionDir, {});
+          }
+        })
+        window.Velocity(viewport, openProp, {
+          duration: MOTION_TIME
+        });
+      } else {
+        window.Velocity(rightSideBar, {
+          width: '0px'
+        }, {
+          duration: MOTION_TIME,
+          begin: function () {
+            window.Velocity(rightMotions, {
+              opacity: 0
+            });
+          }
+        })
+        window.Velocity(viewport, closeProp, {
+          duration: MOTION_TIME
+        });
+      }
+      for (let i = 0; i < drawerBox.children.length; i++) {
+        drawerBox.children[i].classList.toggle('muse-line');
+      }
+      drawerBox.classList.toggle(sideBarOpen);
+    }
+  }
+
+  // 链接跳转
+  let newWindow = 'true'
+  if (newWindow === 'true') {
+    let links = document.querySelectorAll('.post-body a')
+    links.forEach(item => {
+      if (!item.classList.contains('btn')) {
+        item.setAttribute("target", "_blank");
+      }
+    })
+  }
+
+  let faSearch = document.querySelector('#fa_search');
+  faSearch.addEventListener('click', function () {
+    document.querySelector('#search_mask').style = ''
+  })
+
+  // 代码高亮
+  hljs.initHighlightingOnLoad();
+  
+  // 离开当前页title变化
+  var leaveTitle = "";
+  if (leaveTitle) {
+    document.addEventListener('visibilitychange', function () {
+      if (document.visibilityState == 'hidden') {
+        normal_title = document.title;
+        document.title = leaveTitle;
+      } else {
+        document.title = normal_title;
+      }
+    });
+  }
+
+</script>
+  </div>
 </body>
+
+<div class="search-mask" id="search_mask" style="display: none;">
+  <div class="search-box">
+    <div class="search-title">
+      <i class="fa fa-search"></i>
+      <div class="input-box">
+        <input id="search" type="text" class="language" data-lan="search" placeholder="搜索">
+      </div>
+      <i id="close" class="fa fa-times-circle"></i>
+    </div>
+    <div class="stat-box">
+      <span id="stat_count">0</span><span class="language" data-lan="stat">条相关条目，使用了</span><span id="stat_times">0</span><span class="language" data-lan="stat-time">毫秒</span>
+      <hr>
+    </div>
+    <div class="result" id="result">
+      
+      <div class="item">
+        <a class="result-title" style="opacity: 0;" href="https://lisonglin.tk/post/yuan-liu-wen-mai-yu-gao-shan/"" data-c="
+          &lt;h1 id=&#34;源流&#34;&gt;源流&lt;/h1&gt;
+&lt;p&gt;&lt;strong&gt;易&lt;/strong&gt;：&lt;strong&gt;《河图》《洛书》《易经》&lt;/strong&gt;，群经之首，华夏文明的总源头。&lt;br&gt;
+&lt;strong&gt;道&lt;/strong&gt;：&lt;strong&gt;《道德经》&lt;/strong&gt;，三皇之学的集大成，是对易的总结和升华。后世儒法两家的思想根源。老子的思想，后来发展出了五个比较突出的流派。鬼谷子，杨朱，苏秦张仪，韩非子、申不害，庄子、列子，关尹子、尹文，被称之为老学五派。孔子，也是老子的思想传人。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;儒&lt;/strong&gt;：&lt;strong&gt;《礼记》《论语》《尚书》&lt;/strong&gt;。儒为周朝之学，奠基人是周公，由孔子发扬光大。道为儒之本，儒为道之末。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;法&lt;/strong&gt;：&lt;strong&gt;《管子》《商君书》《韩非》&lt;/strong&gt;。管仲、商君之书，源头为道家。韩非子，源头为道儒两家。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;医&lt;/strong&gt;：中医的思想源头，在易经。中医的四大名著为**《黄帝内经》《难经》《伤寒杂病论》《神农本草经》**。有人把《温病条辩》列入中医四大名著，这不合适，温病学说，不是至道，它只是道的一个方面，这种只能叫方医。《难经》思想，承自《黄帝内经》。《黄帝内经》是中医的最高经典，世人不读内经，用伤寒的方剂思想来总括中医，甚至把中医等同于中药，这是非常非常堕落的，这是文盲中医。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;兵&lt;/strong&gt;：代表书籍是在宋朝编撰的**《武经七书》&lt;strong&gt;，兵家的思想总源头，是易和道。《武经七书》由&lt;/strong&gt;《孙子兵法》《吴子兵法》《六韬》《司马法》《三略》《尉缭子》《李卫公问对》**七部著名兵书汇编而成。世人喜欢把兵家思想，照搬到商战上去，不过，如果不懂道，又怎么用兵呢，瞎比划也没什么用。&lt;br&gt;
+至道四经：《道德经》《庄子》《黄帝内经》《黄帝阴符经》👈&lt;/p&gt;
+&lt;h1 id=&#34;文脉&#34;&gt;文脉&lt;/h1&gt;
+&lt;p&gt;&lt;strong&gt;伏羲&lt;/strong&gt;：&lt;strong&gt;《河图》《洛书》《伏羲八卦》&lt;/strong&gt;，我们民族文化一切的总源头。伏羲之于华夏，如同太阳之于万物。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;神农&lt;/strong&gt;：&lt;strong&gt;《神农本草经》&lt;/strong&gt;。神农就是炎帝，炎黄子孙，黄帝占一半，神农占一半。炎黄部落融合，是中原统一的基础。这本书，讲的是医家至道。本草纲目那些乱七八糟的书，是对《神农本草经》在传承上的污染。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;黄帝&lt;/strong&gt;：&lt;strong&gt;《黄帝内经》《黄帝阴符经》《黄帝四经》&lt;/strong&gt;。内经讲治身奉生之道，而要治身，就得理解天地之道，所以内经里，多数讲的还是天地大道，它是中医之宗之源。离开内经讲中医，如同脚不连地去走路。阴符经，讲宇宙万物的一本书，语言极其凝练简洁。黄帝四经，是一本讲治国理政的书。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;伊尹&lt;/strong&gt;：&lt;strong&gt;《汤液经法》《汤誓》《伊训》&lt;/strong&gt;。商朝建国的奠基人，伟大的政治家，也是伟大的医学家。伊尹进一步发展了神农本草经。他是张仲景方剂理论的源头。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;文王&lt;/strong&gt;：统一天下，为八卦做卦辞。周朝八百年，奠定了华夏文明走向成熟的基础。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;姜尚&lt;/strong&gt;：&lt;strong&gt;《三韬》《六略》&lt;/strong&gt;。很多人认为，道家就是画符捉鬼修炼丹修仙的那些人，完全不是这样。真正代表道家思想和精神的，是伊尹，姜尚，管仲，黄石公，鬼谷子，张良这样的人。那些炼丹修仙画符捉鬼的，只是道家的一个旁门小术。道家的最高思想，就是治理天下的帝王之道。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;周公&lt;/strong&gt;：&lt;strong&gt;《礼记》&lt;/strong&gt;。孔子的精神导师，封建制的创立者，宗法制的创立者，影响中国几千年，塑造了后世几千年的中国文化面貌。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;老子&lt;/strong&gt;：&lt;strong&gt;《道德经》&lt;/strong&gt;。道德经是三皇之学，它所讲的道，和河图洛书，和易经里的思想和道理，都是相通的。伯阳立教，影响深远。所谓的百家争鸣，不过是道裂为百。所有的各家，总源头，都可以在这里找到。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;管仲&lt;/strong&gt;：&lt;strong&gt;《管子》&lt;/strong&gt;。这是一本神奇的伟大的书，里面不仅讲怎么治国，还讲经济，讲管理。现在所有的经济学著作，所有的管理学著作，加起来都比不上这一本书，因为它讲的是道。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;商鞅&lt;/strong&gt;：&lt;strong&gt;《商君书》&lt;/strong&gt;。三千年皆为秦政，这个秦政理论总源头，就在这本书里。商鞅塑造了秦政，秦政又塑造了中国后世几千年的国家样貌。可以认为，是商鞅影响并间接塑造了中国几千年的历史。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;鬼谷子&lt;/strong&gt;：&lt;strong&gt;《鬼谷子》《鬼谷子阴符本经七术》&lt;/strong&gt;。这两本书，深不可测。有人认为，只是权诈之术，并非如此。鬼谷子的思想，讲的不是术，而是圣人之道。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;孔子&lt;/strong&gt;：&lt;strong&gt;《论语》《易传》《春秋》《诗经》《尚书》&lt;/strong&gt;。根深蒂固的影响了中国几千年，中国人的伦理观念，大多都是由孔子塑造的。孔子的思想，已经融入了中国人的血液中。孔子之后，儒分为八，不过孟子荀子之后，大儒就少了。很多人，把贱儒们的帐，都算孔子头上，这显然不对。孔子的道，讲的是大道，是经世济国，开万世太平的大道。后来那些愚不可及的腐儒贱儒，并非孔子之道。体现孔子最高思想的书，是《易传》。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;庄子&lt;/strong&gt;：&lt;strong&gt;《庄子》&lt;/strong&gt;。有的人，思想可以突破一隅，有的人思想可以突破一方。有的人思想可以突破地球。有的人思想可以突破银河系。庄子的思想，突破了宇宙。很多时候，他是站在宇宙之外看宇宙，看累了，就撇两眼地球上的蓝星人。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;孟子&lt;/strong&gt;：&lt;strong&gt;《孟子》&lt;/strong&gt;。孟子思想的核心，讲的是义，有义的人，就是大丈夫。失道亡德，礼崩乐坏，仁已不存，那么义不可再失。孟子是一个守城人，以一个义来对抗整个崩坏的社会。他觉得，一个人如果不讲义，跟禽兽有什么区别呢。他特别喜欢说别人是禽兽。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;荀子&lt;/strong&gt;：&lt;strong&gt;《荀子》&lt;/strong&gt;。孟子失守之后，荀子开始以礼守道，主张性恶论。提倡化性起伪，对百姓进行自上而下主动规训式的的教化，而不能靠他们的自觉，因为他们本来都很坏，不可能自觉。荀子研究的是帝王之术，强调经世致用的大儒精神。在他看来，不能结束社会战乱，带来国家天平的思想，都是没有价值的弱智言论。他认为大多数思想家，都是弱智，因为他们的思想没有用。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;韩非&lt;/strong&gt;：&lt;strong&gt;《韩非子》&lt;/strong&gt;。荀子的学生，也是老子思想的学生。他升华了荀子的思想，主张以循名责实来控制百姓。他研究的是帝王之术，他对道德经的理解，比后世绝大多数人都深刻通透。秦始皇之所以能够统一中国，韩非子的思想，功不可没。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;屈原&lt;/strong&gt;：&lt;strong&gt;《离骚》《楚辞》&lt;/strong&gt;。和韩非子一样，也是一个极其聪明的人。他并不是一个单纯的爱国诗人和文学家，而是一个圣人和天才。他的治国思想，属于法家的那一套。有人把李白和屈原相并论，那个酒鬼，怎么能和屈原相比呢，差的太远了。诗歌只是屈原的副业，屈原的主业，是和韩非子一样，是要建立一个统一天下的大帝国。屈原说，我血统高贵，我名字高贵，我长的美，我一生下来就是个天才，我的思想也是天下最美的，可是楚王那个丑八怪癞蛤蟆不懂我，作为一个有精神洁癖和文化洁癖的人，跟楚王这个文盲癞蛤蟆周旋的没玩没了，跟一群脏兮兮的奸佞争来斗去，全是精神污染啊，恶心得我还不如死了算了，罢罢罢，于是便投河自尽。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;秦始皇&lt;/strong&gt;：结束战乱，统一天下。开三千年皆秦政的先河。塑造了后面几千年的中国政治基本模式。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;张良&lt;/strong&gt;：&lt;strong&gt;《素书》&lt;/strong&gt;。张良，是汉朝几百年江山的奠基之人，他之于汉朝，如同姜尚之于周朝。张良的思想，都来源自这本书。这是一本讲世间大道的书，读懂素书，行走人间，可以无往不利。👈&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;陆贾&lt;/strong&gt;：&lt;strong&gt;《新语》&lt;/strong&gt;。汉朝文化建设的总设计师。他的思想，影响了汉朝几百年。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;刘彻&lt;/strong&gt;：在他之后，华夏族开始叫汉族。他为华夏人，铸就了汉魂。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;司马迁&lt;/strong&gt;：《史记》。读史可以知兴衰存亡之道，太史公对华夏文明的贡献，非常大。**《史记》《汉书》《资治通鉴》**最高的三本史学著作，又以《史记》最高。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;韩愈&lt;/strong&gt;：&lt;strong&gt;《谏迎佛骨表》&lt;/strong&gt;，这是一篇千古檄文。韩愈提出了文化道统概念，主张复兴儒学，对中国文化进行清污与重建。他为宋朝理学家力辟奸邪，提供了一面精神旗帜。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;陈抟&lt;/strong&gt;：&lt;strong&gt;《太极图》《指玄篇》《无极图》&lt;/strong&gt;。开后世文化昌盛之先河，他深刻影响了北宋理学的鼻祖周敦颐。周敦颐又深刻影响了北宋五子中的其他几位和朱熹。他是一座高山。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;北宋五子和朱熹&lt;/strong&gt;：**《周元公集》《张载集》《朱子语类》**汉儒凋败之后，华夏文明的又一次文化昌盛时期。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;王夫之&lt;/strong&gt;：&lt;strong&gt;《周易外传》、《黄书》、《尚书引义》、《永历实录》、《春秋世论》、《噩梦》、《读通鉴论》、《宋论》&lt;/strong&gt;。王夫之认为，宋朝亡国，和明朝亡国，都是因为程朱理学，与陆王心学，是亡国之学。他上承张载思想，重提经学的经世致用天职，以文载道，以道正天下。他对朱熹和王阳明尚清谈的无用学问，进行了大清算。&lt;/p&gt;
+&lt;p&gt;王夫之对后世，极其重要，他把当时中国的文化中心，转移到了湖南。湖南在近代英杰辈出，就在于王夫之的思想辐射。他深刻影响了曾国藩，曾国藩又影响了谭嗣同，谭嗣同影响了杨昌济，杨昌济影响了毛泽东。王夫之说，一个人要是没有志向，跟禽兽没什么区别。他重新唤醒了士大夫们以天下为己任的那种大儒精神。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;辜鸿铭&lt;/strong&gt;：&lt;strong&gt;《中国人的精神》，也叫《春秋大义》&lt;/strong&gt;。他是过去的那个中国，最后一个精神贵族，他是清儒中的一个清流。清儒是几千年未有之异端邪说，是荀子所讲的那种贱儒，民国和共和国那些西学东渐的新儒家，则比清儒还贱。不过辜鸿铭是个例外，他是荀子说的那种大儒。他对儒家思想的理解，对中国文化的理解，非常深刻，同时对西方文化的理解和洞察，也非常的深刻。和他相比，鲁迅，林语堂，胡适之辈，都是文化盲流。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;毛泽东&lt;/strong&gt;：&lt;strong&gt;《毛泽东选集》&lt;/strong&gt;。王夫之一脉的思想，给毛泽东注入了精神动力，否则难以理解，为什么他小小年纪的时候，就以治国平天下为己任。毛泽东是新中国最有学问的一个人。他研究的是经世济国的大学问，他对历史，文化，政治，军事的洞察力，非常深刻，目光如炬的审视着一切。陈寅恪，郭沫若，冯友兰，钱钟书这样的，研究小学问的学者，自然无法和毛泽东相提并论。毛泽东对那些言必称古希腊古罗马的所谓的知识分子，内心里是很瞧不起的。&lt;/p&gt;
+&lt;p&gt;有人说，钱钟书眼高过顶，是个谁都瞧不起的精神贵族，其实他并不是精神贵族，他并不懂天地之道，也不懂经世济国之道。他只是在学问的品味上格调上，比他所瞧不起的那些同行们高一些，但他和他的同行们所研究的这些学问本身，都不是什么大道，只是屑末小学。新中国成立以来，只有一个伟岸的大写的精神贵族，那就是毛泽东。&lt;/p&gt;
+&lt;h1 id=&#34;高山&#34;&gt;高山&lt;/h1&gt;
+&lt;p&gt;&lt;strong&gt;伏羲&lt;/strong&gt;：天根，道魂。&lt;/p&gt;
+&lt;p&gt;华夏人的人文始祖，他把华夏人，从游牧文明，升级到农耕文明。他通过对天地万物的观察和理解，把华夏人的文明之根，深深的扎进了天道自然之中。如果没有伏羲，华夏人，可能跟现在那些对着空气瞎叨叨的奉妖事鬼的愚昧民族，没什么区别。因为有了伏羲，华夏人的文化和精神，和生活生产，都走上了一条理解世界，顺应自然，理解未来，趋吉避凶，成就大业的道路。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;黄帝&lt;/strong&gt;：祖根，祖魂。&lt;/p&gt;
+&lt;p&gt;黄帝铸就了华夏人的祖根和祖魂。进一步发展了伏羲的思想，把华夏人的生存空间，从狭小的河洛平原，推进到了整个黄河流域，统一了整个中原地区。并且，在各个方面，都使得华夏文明大幅度进步。这个时期的人口大爆炸，奠定了华夏人的人口绝对优势，这个绝对优势太明显，以至于可以保证，即便后代出现了一些不肖子孙败家子，也不会使华夏人亡族亡种。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;秦始皇&lt;/strong&gt;：帝国根，帝国魂。&lt;/p&gt;
+&lt;p&gt;继续把华夏人的生存空间，推进到了整个黄河，长江和珠江流域。秦帝国，是历代华夏人建立的帝国的标准版和母本。始皇帝，为华夏人的统一，做出了伟大的贡献。这次统一，比黄帝和大禹的统一，更为深刻，影响也更为深远。他不仅为帝国统治，创立了硬件的疆域标准，也为帝国统治，创立了郡县制和中央集权加文官体系，这个大帝国统治的政治系统。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;毛泽东&lt;/strong&gt;：世界根，世界魂。&lt;/p&gt;
+&lt;p&gt;中国近代史的屈辱和磨难，比五胡乱华更甚，危亡形势也更凶险。为了不亡族亡种，无数的伟人英雄们，奋起救亡，图存图强。李鸿章没有立住，袁世凯没有立住，孙文没有立住，蒋介石没有立住，只有毛泽东立住了。他不仅立住了，而且还跟弓箭种、强盗种、野兽种、虫蛇种打了一圈，稳固住了中国的国防，牢牢守住了东北、新疆、西藏、朝鲜这些战略缓冲区，为华夏人的生存，创造了生存安全保险带。毛泽东为中国缔造了国魂，军魂，图强之魂，这就是现代中国自立于世界的根。&lt;br&gt;
+摘自：&lt;a href=&#34;https://mp.weixin.qq.com/s/Tq2cQFBBYSj4LID2-lvxTw&#34;&gt;华夏文化谱系，中国人的根和魂&lt;/a&gt;&lt;/p&gt;
+">源流，文脉与高山</a>
+      </div>
+      
+      <div class="item">
+        <a class="result-title" style="opacity: 0;" href="https://lisonglin.tk/post/comsol-bian-jie-tiao-jian/"" data-c="
+          &lt;p&gt;&lt;strong&gt;固体物理学&lt;/strong&gt;，&lt;strong&gt;传热&lt;/strong&gt;，&lt;strong&gt;压力声学&lt;/strong&gt;，&lt;strong&gt;电流&lt;/strong&gt;物理场下的&lt;strong&gt;狄氏&lt;/strong&gt;、&lt;strong&gt;纽曼&lt;/strong&gt;、&lt;strong&gt;洛平&lt;/strong&gt;这三类边界条件。&lt;/p&gt;
+&lt;!-- more --&gt;
+&lt;p&gt;&lt;strong&gt;狄氏条件&lt;/strong&gt;用于指定要求解的变量。&lt;br&gt;
+&lt;strong&gt;纽曼条件&lt;/strong&gt;用于指定通量，也就是因变量的梯度。&lt;br&gt;
+&lt;strong&gt;洛平条件&lt;/strong&gt;结合了前两类边界条件，用于指定变量及其梯度之间的关系。&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;物理场&lt;/th&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;狄氏条件&lt;/th&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;纽曼条件&lt;/th&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;洛平条件&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;em&gt;&lt;strong&gt;固体力学&lt;/strong&gt;&lt;/em&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;位移&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;牵引力&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;弹簧&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;em&gt;&lt;strong&gt;传热&lt;/strong&gt;&lt;/em&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;温度&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;热通量&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;对流&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;em&gt;&lt;strong&gt;压力声学&lt;/strong&gt;&lt;/em&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;声压&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;法向加速度&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;阻抗&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;em&gt;&lt;strong&gt;电流&lt;/strong&gt;&lt;/em&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;固定电势&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;固定电流&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;阻抗&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h1 id=&#34;纽曼条件&#34;&gt;纽曼条件&lt;/h1&gt;
+&lt;p&gt;纽曼条件是“&lt;strong&gt;载荷&lt;/strong&gt;”，出现在方程组右侧。在 COMSOL Multiphysics 的方程视图中，这类边界条件显示为弱贡献。纽曼条件纯粹是方程组右侧附加的贡献，因此可以包含以下变量的任何函数：&lt;strong&gt;时间&lt;/strong&gt;、&lt;strong&gt;坐标&lt;/strong&gt;或&lt;strong&gt;参数值&lt;/strong&gt;。&lt;br&gt;
+例如：我们来看一个传热问题，其中半径为&lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;r&lt;/mi&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;r&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.43056em;vertical-align:0em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34; style=&#34;margin-right:0.02778em;&#34;&gt;r&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;的圆形热源沿&lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;x&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.43056em;vertical-align:0em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34;&gt;x&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;轴方向以速度&lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;v&lt;/mi&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;v&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.43056em;vertical-align:0em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34; style=&#34;margin-right:0.03588em;&#34;&gt;v&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;移动。其强度分布呈抛物线形，峰值为&lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;msub&gt;&lt;mi&gt;q&lt;/mi&gt;&lt;mn&gt;0&lt;/mn&gt;&lt;/msub&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;q_0&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.625em;vertical-align:-0.19444em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;&lt;span class=&#34;mord mathdefault&#34; style=&#34;margin-right:0.03588em;&#34;&gt;q&lt;/span&gt;&lt;span class=&#34;msupsub&#34;&gt;&lt;span class=&#34;vlist-t vlist-t2&#34;&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.30110799999999993em;&#34;&gt;&lt;span style=&#34;top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;&#34;&gt;&lt;span class=&#34;pstrut&#34; style=&#34;height:2.7em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;sizing reset-size6 size3 mtight&#34;&gt;&lt;span class=&#34;mord mtight&#34;&gt;0&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-s&#34;&gt;​&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.15em;&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;。此载荷的数学描述可以是&lt;/p&gt;
+&lt;p class=&#39;katex-block&#39;&gt;&lt;span class=&#34;katex-display&#34;&gt;&lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;q&lt;/mi&gt;&lt;mo&gt;(&lt;/mo&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo separator=&#34;true&#34;&gt;,&lt;/mo&gt;&lt;mi&gt;y&lt;/mi&gt;&lt;mo separator=&#34;true&#34;&gt;,&lt;/mo&gt;&lt;mi&gt;t&lt;/mi&gt;&lt;mo&gt;)&lt;/mo&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;msub&gt;&lt;mi&gt;q&lt;/mi&gt;&lt;mn&gt;0&lt;/mn&gt;&lt;/msub&gt;&lt;mrow&gt;&lt;mo fence=&#34;true&#34;&gt;(&lt;/mo&gt;&lt;mo&gt;(&lt;/mo&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;mo&gt;−&lt;/mo&gt;&lt;msup&gt;&lt;mrow&gt;&lt;mo fence=&#34;true&#34;&gt;(&lt;/mo&gt;&lt;mfrac&gt;&lt;mi&gt;r&lt;/mi&gt;&lt;mi&gt;R&lt;/mi&gt;&lt;/mfrac&gt;&lt;mo fence=&#34;true&#34;&gt;)&lt;/mo&gt;&lt;/mrow&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;/msup&gt;&lt;mo fence=&#34;true&#34;&gt;)&lt;/mo&gt;&lt;/mrow&gt;&lt;mo separator=&#34;true&#34;&gt;,&lt;/mo&gt;&lt;mi&gt;r&lt;/mi&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;msqrt&gt;&lt;mrow&gt;&lt;mo&gt;(&lt;/mo&gt;&lt;mo&gt;(&lt;/mo&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo&gt;−&lt;/mo&gt;&lt;mi&gt;v&lt;/mi&gt;&lt;mi&gt;t&lt;/mi&gt;&lt;msup&gt;&lt;mo&gt;)&lt;/mo&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;/msup&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;msup&gt;&lt;mi&gt;y&lt;/mi&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;/msup&gt;&lt;mo&gt;)&lt;/mo&gt;&lt;/mrow&gt;&lt;/msqrt&gt;&lt;mo separator=&#34;true&#34;&gt;,&lt;/mo&gt;&lt;mi&gt;r&lt;/mi&gt;&lt;mo&gt;&amp;lt;&lt;/mo&gt;&lt;mi&gt;R&lt;/mi&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;q(x,y,t) = q_0 \left( (1- \left(r \over R \right)^2 \right)  ,  r=\sqrt{((x-vt)^2+y^2)} , r&amp;lt;R
+&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:1em;vertical-align:-0.25em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34; style=&#34;margin-right:0.03588em;&#34;&gt;q&lt;/span&gt;&lt;span class=&#34;mopen&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34;&gt;x&lt;/span&gt;&lt;span class=&#34;mpunct&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.16666666666666666em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34; style=&#34;margin-right:0.03588em;&#34;&gt;y&lt;/span&gt;&lt;span class=&#34;mpunct&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.16666666666666666em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34;&gt;t&lt;/span&gt;&lt;span class=&#34;mclose&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2777777777777778em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mrel&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2777777777777778em;&#34;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:2.40003em;vertical-align:-0.95003em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;&lt;span class=&#34;mord mathdefault&#34; style=&#34;margin-right:0.03588em;&#34;&gt;q&lt;/span&gt;&lt;span class=&#34;msupsub&#34;&gt;&lt;span class=&#34;vlist-t vlist-t2&#34;&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.30110799999999993em;&#34;&gt;&lt;span style=&#34;top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;&#34;&gt;&lt;span class=&#34;pstrut&#34; style=&#34;height:2.7em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;sizing reset-size6 size3 mtight&#34;&gt;&lt;span class=&#34;mord mtight&#34;&gt;0&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-s&#34;&gt;​&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.15em;&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.16666666666666666em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;minner&#34;&gt;&lt;span class=&#34;mopen delimcenter&#34; style=&#34;top:0em;&#34;&gt;&lt;span class=&#34;delimsizing size3&#34;&gt;(&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;mopen&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2222222222222222em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mbin&#34;&gt;−&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2222222222222222em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;minner&#34;&gt;&lt;span class=&#34;minner&#34;&gt;&lt;span class=&#34;mopen delimcenter&#34; style=&#34;top:0em;&#34;&gt;&lt;span class=&#34;delimsizing size2&#34;&gt;(&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;&lt;span class=&#34;mopen nulldelimiter&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mfrac&#34;&gt;&lt;span class=&#34;vlist-t vlist-t2&#34;&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:1.10756em;&#34;&gt;&lt;span style=&#34;top:-2.314em;&#34;&gt;&lt;span class=&#34;pstrut&#34; style=&#34;height:3em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;&lt;span class=&#34;mord mathdefault&#34; style=&#34;margin-right:0.00773em;&#34;&gt;R&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;top:-3.23em;&#34;&gt;&lt;span class=&#34;pstrut&#34; style=&#34;height:3em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;frac-line&#34; style=&#34;border-bottom-width:0.04em;&#34;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;top:-3.677em;&#34;&gt;&lt;span class=&#34;pstrut&#34; style=&#34;height:3em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;&lt;span class=&#34;mord mathdefault&#34; style=&#34;margin-right:0.02778em;&#34;&gt;r&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-s&#34;&gt;​&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.686em;&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;mclose nulldelimiter&#34;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;mclose delimcenter&#34; style=&#34;top:0em;&#34;&gt;&lt;span class=&#34;delimsizing size2&#34;&gt;)&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;msupsub&#34;&gt;&lt;span class=&#34;vlist-t&#34;&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:1.3540079999999999em;&#34;&gt;&lt;span style=&#34;top:-3.6029em;margin-right:0.05em;&#34;&gt;&lt;span class=&#34;pstrut&#34; style=&#34;height:2.7em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;sizing reset-size6 size3 mtight&#34;&gt;&lt;span class=&#34;mord mtight&#34;&gt;2&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;mclose delimcenter&#34; style=&#34;top:0em;&#34;&gt;&lt;span class=&#34;delimsizing size3&#34;&gt;)&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.16666666666666666em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mpunct&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.16666666666666666em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34; style=&#34;margin-right:0.02778em;&#34;&gt;r&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2777777777777778em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mrel&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2777777777777778em;&#34;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:1.24em;vertical-align:-0.25612499999999994em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord sqrt&#34;&gt;&lt;span class=&#34;vlist-t vlist-t2&#34;&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.983875em;&#34;&gt;&lt;span class=&#34;svg-align&#34; style=&#34;top:-3.2em;&#34;&gt;&lt;span class=&#34;pstrut&#34; style=&#34;height:3.2em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord&#34; style=&#34;padding-left:1em;&#34;&gt;&lt;span class=&#34;mopen&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mopen&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34;&gt;x&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2222222222222222em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mbin&#34;&gt;−&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2222222222222222em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34; style=&#34;margin-right:0.03588em;&#34;&gt;v&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34;&gt;t&lt;/span&gt;&lt;span class=&#34;mclose&#34;&gt;&lt;span class=&#34;mclose&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;msupsub&#34;&gt;&lt;span class=&#34;vlist-t&#34;&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.740108em;&#34;&gt;&lt;span style=&#34;top:-2.9890000000000003em;margin-right:0.05em;&#34;&gt;&lt;span class=&#34;pstrut&#34; style=&#34;height:2.7em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;sizing reset-size6 size3 mtight&#34;&gt;&lt;span class=&#34;mord mtight&#34;&gt;2&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2222222222222222em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mbin&#34;&gt;+&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2222222222222222em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;&lt;span class=&#34;mord mathdefault&#34; style=&#34;margin-right:0.03588em;&#34;&gt;y&lt;/span&gt;&lt;span class=&#34;msupsub&#34;&gt;&lt;span class=&#34;vlist-t&#34;&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.740108em;&#34;&gt;&lt;span style=&#34;top:-2.9890000000000003em;margin-right:0.05em;&#34;&gt;&lt;span class=&#34;pstrut&#34; style=&#34;height:2.7em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;sizing reset-size6 size3 mtight&#34;&gt;&lt;span class=&#34;mord mtight&#34;&gt;2&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;mclose&#34;&gt;)&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;top:-2.9438750000000002em;&#34;&gt;&lt;span class=&#34;pstrut&#34; style=&#34;height:3.2em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;hide-tail&#34; style=&#34;min-width:1.02em;height:1.28em;&#34;&gt;&lt;svg width=&#39;400em&#39; height=&#39;1.28em&#39; viewBox=&#39;0 0 400000 1296&#39; preserveAspectRatio=&#39;xMinYMin slice&#39;&gt;&lt;path d=&#39;M263,681c0.7,0,18,39.7,52,119c34,79.3,68.167,
+158.7,102.5,238c34.3,79.3,51.8,119.3,52.5,120c340,-704.7,510.7,-1060.3,512,-1067
+c4.7,-7.3,11,-11,19,-11H40000v40H1012.3s-271.3,567,-271.3,567c-38.7,80.7,-84,
+175,-136,283c-52,108,-89.167,185.3,-111.5,232c-22.3,46.7,-33.8,70.3,-34.5,71
+c-4.7,4.7,-12.3,7,-23,7s-12,-1,-12,-1s-109,-253,-109,-253c-72.7,-168,-109.3,
+-252,-110,-252c-10.7,8,-22,16.7,-34,26c-22,17.3,-33.3,26,-34,26s-26,-26,-26,-26
+s76,-59,76,-59s76,-60,76,-60z M1001 80H40000v40H1012z&#39;/&gt;&lt;/svg&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-s&#34;&gt;​&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.25612499999999994em;&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;mpunct&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.16666666666666666em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34; style=&#34;margin-right:0.02778em;&#34;&gt;r&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2777777777777778em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mrel&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2777777777777778em;&#34;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.68333em;vertical-align:0em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34; style=&#34;margin-right:0.00773em;&#34;&gt;R&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;h1 id=&#34;狄氏条件&#34;&gt;狄氏条件&lt;/h1&gt;
+&lt;p&gt;当给定狄氏条件时，因变量就指定了，所以无须对其求解。我们可以从问题中删除这一类自由度方程。因此狄氏条件会改变刚度矩阵的结构。在 COMSOL Multiphysics 的方程视图中，这类条件显示为约束。&lt;br&gt;
+假定要将移动点的温度指定为刚好 450 K，这或许有点刻意，但是能表现出纽曼条件和狄氏条件之间的一个重要区别。假如要添加一个温度 节点并输入类似表达式&lt;code&gt;( if(r&amp;lt;R,450[K],0))&lt;/code&gt;，这意味着将热点不会覆盖的那部分边界的温度设定为绝对零度。&lt;br&gt;
+不过，我们的目的是在&lt;strong&gt;热点之外停用狄氏条件&lt;/strong&gt;。为此可以使用一个小窍门：输入 &lt;code&gt;if(r &amp;lt; R,450[K],ht.Tvar)&lt;/code&gt;作为指定值，就能获得所期望的停用。&lt;/p&gt;
+&lt;h2 id=&#34;弱约束&#34;&gt;弱约束&lt;/h2&gt;
+&lt;p&gt;在 COMSOL Multiphysics 中，狄氏条件实际上有两种可能的实现方式：默认情况下为上文所提到的逐点约束，还可以使用弱约束。在弱约束中，我们要添加方程，而不是移除方程。热通量添加为额外的自由度（拉格朗日乘子），以强制指定温度值。&lt;br&gt;
+只要对上面的温度表达式稍作更改，就可以使用本质上相同的窍门使弱约束含条件限制。要使用弱约束，须先启用高级物理场接口选项。&lt;br&gt;
+在物理场接口内对某个节点选中弱约束后，拉格朗日乘子上就会添加额外的自由度。这个示例中，该自由度名为 &lt;code&gt;T_lm&lt;/code&gt;。&lt;br&gt;
+如果应用了上文中的温度表达式，那么在停用狄氏条件的边界部分，此额外自由度不会得到任何刚度矩阵的贡献，刚度矩阵由此变为奇异矩阵。为了避免这种情形，我们将&lt;code&gt;if(r &amp;lt; R,450[K],ht.Tvar)&lt;/code&gt;更改为&lt;code&gt;if(r &amp;lt; R,450[K],ht.Tvar-T_lm*1e-2)&lt;/code&gt;。不同的模型和物理场，&lt;code&gt;T_lm&lt;/code&gt;所用的乘子也不同，因此可能需要进行一些调整。&lt;/p&gt;
+&lt;h1 id=&#34;洛平条件&#34;&gt;洛平条件&lt;/h1&gt;
+&lt;p&gt;洛平条件通常都会影响刚度矩阵和方程右侧。虽然刚度矩阵的结构不会受到影响，但现有位置上会添加值。在方程视图 中，洛平条件同样显示为&lt;em&gt;弱&lt;/em&gt;贡献。将这类条件转换为关于时间、空间和其他变量的函数，这与使用纽曼条件时的做法一致。&lt;br&gt;
+不过有趣的是，选择合适的值确实可以转换洛平条件，使之近似为狄氏条件或纽曼条件。如果仿真期间你希望在这两类边界条件之间切换，那么这一点十分重要。&lt;br&gt;
+要创建狄氏条件，需要对“刚度”指派一个高值，例如弹簧常数或传热系数。在数学术语中，这实质上是狄氏条件的&lt;em&gt;罚&lt;/em&gt;实现。刚度越高，自由度的指定值就越精确。但这里需要注意：刚度过高会影响刚度矩阵的数值稳定性。而在传热问题中，要选择“高”的传热系数 &lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;α&lt;/mi&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;\alpha&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.43056em;vertical-align:0em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34; style=&#34;margin-right:0.0037em;&#34;&gt;α&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;，起始值可以是&lt;/p&gt;
+&lt;p class=&#39;katex-block&#39;&gt;&lt;span class=&#34;katex-display&#34;&gt;&lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;α&lt;/mi&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mn&gt;1000&lt;/mn&gt;&lt;mfrac&gt;&lt;mi&gt;λ&lt;/mi&gt;&lt;mi&gt;h&lt;/mi&gt;&lt;/mfrac&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;\alpha=1000\frac {\lambda} {h}
+&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.43056em;vertical-align:0em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34; style=&#34;margin-right:0.0037em;&#34;&gt;α&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2777777777777778em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mrel&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2777777777777778em;&#34;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:2.05744em;vertical-align:-0.686em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;&lt;span class=&#34;mopen nulldelimiter&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mfrac&#34;&gt;&lt;span class=&#34;vlist-t vlist-t2&#34;&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:1.37144em;&#34;&gt;&lt;span style=&#34;top:-2.314em;&#34;&gt;&lt;span class=&#34;pstrut&#34; style=&#34;height:3em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;&lt;span class=&#34;mord mathdefault&#34;&gt;h&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;top:-3.23em;&#34;&gt;&lt;span class=&#34;pstrut&#34; style=&#34;height:3em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;frac-line&#34; style=&#34;border-bottom-width:0.04em;&#34;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;top:-3.677em;&#34;&gt;&lt;span class=&#34;pstrut&#34; style=&#34;height:3em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;&lt;span class=&#34;mord mathdefault&#34;&gt;λ&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-s&#34;&gt;​&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.686em;&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;mclose nulldelimiter&#34;&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;其中 &lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;λ&lt;/mi&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;\lambda&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.69444em;vertical-align:0em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34;&gt;λ&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;表示导热系数，&lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;h&lt;/mi&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;h&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.69444em;vertical-align:0em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34;&gt;h&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;表示特征单元尺寸。&lt;br&gt;
+用适当的材料属性（也就是固体力学中的杨氏模量）替换 ，即可以在其他物理场实现相同的计算。将因子设为 1000 只是一个建议，可以替换成 &lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;msup&gt;&lt;mn&gt;0&lt;/mn&gt;&lt;mn&gt;4&lt;/mn&gt;&lt;/msup&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;10^4&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.8141079999999999em;vertical-align:0em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;&lt;span class=&#34;mord&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;msupsub&#34;&gt;&lt;span class=&#34;vlist-t&#34;&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.8141079999999999em;&#34;&gt;&lt;span style=&#34;top:-3.063em;margin-right:0.05em;&#34;&gt;&lt;span class=&#34;pstrut&#34; style=&#34;height:2.7em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;sizing reset-size6 size3 mtight&#34;&gt;&lt;span class=&#34;mord mtight&#34;&gt;4&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt; 或 &lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;msup&gt;&lt;mn&gt;0&lt;/mn&gt;&lt;mn&gt;5&lt;/mn&gt;&lt;/msup&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;10^5&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.8141079999999999em;vertical-align:0em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;&lt;span class=&#34;mord&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;msupsub&#34;&gt;&lt;span class=&#34;vlist-t&#34;&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.8141079999999999em;&#34;&gt;&lt;span style=&#34;top:-3.063em;margin-right:0.05em;&#34;&gt;&lt;span class=&#34;pstrut&#34; style=&#34;height:2.7em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;sizing reset-size6 size3 mtight&#34;&gt;&lt;span class=&#34;mord mtight&#34;&gt;5&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;。&lt;br&gt;
+当年刚刚开始使用有限元分析时，我有时无法在结构力学的有限元程序中指定非零位移。这一限制是由于编程越来越复杂造成的。遇到这种情况时，最佳方法是添加预变形的刚性弹簧来使用罚函数法。但是刚度不能过大；因为那时还在采用用单精度运算！&lt;br&gt;
+下面，我们转而讨论近似为纽曼条件。我们希望热通量与表面温度无关。在传热这一示例中，洛平条件声明向内热通量 &lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;q&lt;/mi&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;q&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.625em;vertical-align:-0.19444em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34; style=&#34;margin-right:0.03588em;&#34;&gt;q&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;为&lt;/p&gt;
+&lt;p class=&#39;katex-block&#39;&gt;&lt;span class=&#34;katex-display&#34;&gt;&lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;q&lt;/mi&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mi&gt;α&lt;/mi&gt;&lt;mo&gt;(&lt;/mo&gt;&lt;msub&gt;&lt;mi&gt;T&lt;/mi&gt;&lt;mrow&gt;&lt;mi&gt;e&lt;/mi&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mi&gt;t&lt;/mi&gt;&lt;/mrow&gt;&lt;/msub&gt;&lt;mo&gt;−&lt;/mo&gt;&lt;mi&gt;T&lt;/mi&gt;&lt;mo&gt;)&lt;/mo&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;q=\alpha(T_{ext}-T)
+&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.625em;vertical-align:-0.19444em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34; style=&#34;margin-right:0.03588em;&#34;&gt;q&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2777777777777778em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mrel&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2777777777777778em;&#34;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:1em;vertical-align:-0.25em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34; style=&#34;margin-right:0.0037em;&#34;&gt;α&lt;/span&gt;&lt;span class=&#34;mopen&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;&lt;span class=&#34;mord mathdefault&#34; style=&#34;margin-right:0.13889em;&#34;&gt;T&lt;/span&gt;&lt;span class=&#34;msupsub&#34;&gt;&lt;span class=&#34;vlist-t vlist-t2&#34;&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.2805559999999999em;&#34;&gt;&lt;span style=&#34;top:-2.5500000000000003em;margin-left:-0.13889em;margin-right:0.05em;&#34;&gt;&lt;span class=&#34;pstrut&#34; style=&#34;height:2.7em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;sizing reset-size6 size3 mtight&#34;&gt;&lt;span class=&#34;mord mtight&#34;&gt;&lt;span class=&#34;mord mathdefault mtight&#34;&gt;e&lt;/span&gt;&lt;span class=&#34;mord mathdefault mtight&#34;&gt;x&lt;/span&gt;&lt;span class=&#34;mord mathdefault mtight&#34;&gt;t&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-s&#34;&gt;​&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.15em;&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2222222222222222em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mbin&#34;&gt;−&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2222222222222222em;&#34;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:1em;vertical-align:-0.25em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34; style=&#34;margin-right:0.13889em;&#34;&gt;T&lt;/span&gt;&lt;span class=&#34;mclose&#34;&gt;)&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;其中 &lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;α&lt;/mi&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;\alpha&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.43056em;vertical-align:0em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34; style=&#34;margin-right:0.0037em;&#34;&gt;α&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;表示传热系数，&lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;T&lt;/mi&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;T&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.68333em;vertical-align:0em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34; style=&#34;margin-right:0.13889em;&#34;&gt;T&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;表示边界温度，&lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;msub&gt;&lt;mi&gt;T&lt;/mi&gt;&lt;mrow&gt;&lt;mi&gt;e&lt;/mi&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mi&gt;t&lt;/mi&gt;&lt;/mrow&gt;&lt;/msub&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;T_{ext}&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.83333em;vertical-align:-0.15em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;&lt;span class=&#34;mord mathdefault&#34; style=&#34;margin-right:0.13889em;&#34;&gt;T&lt;/span&gt;&lt;span class=&#34;msupsub&#34;&gt;&lt;span class=&#34;vlist-t vlist-t2&#34;&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.2805559999999999em;&#34;&gt;&lt;span style=&#34;top:-2.5500000000000003em;margin-left:-0.13889em;margin-right:0.05em;&#34;&gt;&lt;span class=&#34;pstrut&#34; style=&#34;height:2.7em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;sizing reset-size6 size3 mtight&#34;&gt;&lt;span class=&#34;mord mtight&#34;&gt;&lt;span class=&#34;mord mathdefault mtight&#34;&gt;e&lt;/span&gt;&lt;span class=&#34;mord mathdefault mtight&#34;&gt;x&lt;/span&gt;&lt;span class=&#34;mord mathdefault mtight&#34;&gt;t&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-s&#34;&gt;​&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.15em;&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;表示外部温度。&lt;br&gt;
+所以如果 &lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;msub&gt;&lt;mi&gt;T&lt;/mi&gt;&lt;mrow&gt;&lt;mi&gt;e&lt;/mi&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mi&gt;t&lt;/mi&gt;&lt;/mrow&gt;&lt;/msub&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;T_{ext}&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.83333em;vertical-align:-0.15em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;&lt;span class=&#34;mord mathdefault&#34; style=&#34;margin-right:0.13889em;&#34;&gt;T&lt;/span&gt;&lt;span class=&#34;msupsub&#34;&gt;&lt;span class=&#34;vlist-t vlist-t2&#34;&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.2805559999999999em;&#34;&gt;&lt;span style=&#34;top:-2.5500000000000003em;margin-left:-0.13889em;margin-right:0.05em;&#34;&gt;&lt;span class=&#34;pstrut&#34; style=&#34;height:2.7em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;sizing reset-size6 size3 mtight&#34;&gt;&lt;span class=&#34;mord mtight&#34;&gt;&lt;span class=&#34;mord mathdefault mtight&#34;&gt;e&lt;/span&gt;&lt;span class=&#34;mord mathdefault mtight&#34;&gt;x&lt;/span&gt;&lt;span class=&#34;mord mathdefault mtight&#34;&gt;t&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-s&#34;&gt;​&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.15em;&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;比表面预期温度高很多，那么&lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;q&lt;/mi&gt;&lt;mo&gt;≈&lt;/mo&gt;&lt;mi&gt;α&lt;/mi&gt;&lt;msub&gt;&lt;mi&gt;T&lt;/mi&gt;&lt;mrow&gt;&lt;mi&gt;e&lt;/mi&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mi&gt;t&lt;/mi&gt;&lt;/mrow&gt;&lt;/msub&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;q\approx \alpha T_{ext}&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.6775599999999999em;vertical-align:-0.19444em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34; style=&#34;margin-right:0.03588em;&#34;&gt;q&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2777777777777778em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mrel&#34;&gt;≈&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2777777777777778em;&#34;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.83333em;vertical-align:-0.15em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34; style=&#34;margin-right:0.0037em;&#34;&gt;α&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;&lt;span class=&#34;mord mathdefault&#34; style=&#34;margin-right:0.13889em;&#34;&gt;T&lt;/span&gt;&lt;span class=&#34;msupsub&#34;&gt;&lt;span class=&#34;vlist-t vlist-t2&#34;&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.2805559999999999em;&#34;&gt;&lt;span style=&#34;top:-2.5500000000000003em;margin-left:-0.13889em;margin-right:0.05em;&#34;&gt;&lt;span class=&#34;pstrut&#34; style=&#34;height:2.7em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;sizing reset-size6 size3 mtight&#34;&gt;&lt;span class=&#34;mord mtight&#34;&gt;&lt;span class=&#34;mord mathdefault mtight&#34;&gt;e&lt;/span&gt;&lt;span class=&#34;mord mathdefault mtight&#34;&gt;x&lt;/span&gt;&lt;span class=&#34;mord mathdefault mtight&#34;&gt;t&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-s&#34;&gt;​&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.15em;&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt; 。则采用的策略可以是选择一个任意大的&lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;msub&gt;&lt;mi&gt;T&lt;/mi&gt;&lt;mrow&gt;&lt;mi&gt;e&lt;/mi&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mi&gt;t&lt;/mi&gt;&lt;/mrow&gt;&lt;/msub&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;T_{ext}&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.83333em;vertical-align:-0.15em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;&lt;span class=&#34;mord mathdefault&#34; style=&#34;margin-right:0.13889em;&#34;&gt;T&lt;/span&gt;&lt;span class=&#34;msupsub&#34;&gt;&lt;span class=&#34;vlist-t vlist-t2&#34;&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.2805559999999999em;&#34;&gt;&lt;span style=&#34;top:-2.5500000000000003em;margin-left:-0.13889em;margin-right:0.05em;&#34;&gt;&lt;span class=&#34;pstrut&#34; style=&#34;height:2.7em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;sizing reset-size6 size3 mtight&#34;&gt;&lt;span class=&#34;mord mtight&#34;&gt;&lt;span class=&#34;mord mathdefault mtight&#34;&gt;e&lt;/span&gt;&lt;span class=&#34;mord mathdefault mtight&#34;&gt;x&lt;/span&gt;&lt;span class=&#34;mord mathdefault mtight&#34;&gt;t&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-s&#34;&gt;​&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.15em;&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt; ，然后计算一个合适的传热系数。&lt;br&gt;
+在实际情况中，设计人员利用这一原理将以下固定力引入实际机械部件中：又长又软的预应力弹簧。如果弹簧的预变形远大于与弹簧连接的部件的位移，则弹簧的力几乎保持不变。&lt;br&gt;
+参考地址：&lt;a href=&#34;https://cn.comsol.com/blogs/how-to-make-boundary-conditions-conditional-in-your-simulation/&#34;&gt;如何设置特殊边界条件&lt;/a&gt;&lt;/p&gt;
+">Comsol边界条件</a>
+      </div>
+      
+      <div class="item">
+        <a class="result-title" style="opacity: 0;" href="https://lisonglin.tk/post/gridea-jian-dan-jiao-cheng-freenomcloudflare/"" data-c="
+          &lt;h1 id=&#34;git&#34;&gt;git&lt;/h1&gt;
+&lt;ol&gt;
+&lt;li&gt;下载git（Gridea是基于git的所以需要先安装git）&lt;/li&gt;
+&lt;li&gt;安装git（直接一直点击下一步就可以了）&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h1 id=&#34;gridea&#34;&gt;Gridea&lt;/h1&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;下载Gridea&lt;/li&gt;
+&lt;li&gt;安装Gridea（默认或者更换你喜欢的路径）&lt;/li&gt;
+&lt;li&gt;创建 GitHub 账号，并创建一个仓库 Token。&lt;a href=&#34;https://gridea.dev/gridea-start/&#34;&gt;5-8步参考地址&lt;/a&gt;&lt;br&gt;
+  点击GitHub，进行注册。登录 GitHub 之后，点击这里创建一个 Token，&lt;strong&gt;勾选上 repo 的相关权限即可&lt;/strong&gt;。生成之后记得把 Token 复制到你的本地，因为一旦关闭网页将不能再看到它。&lt;br&gt;
+  小白之创建仓库方法：&lt;img src=&#34;https://lisonglin.tk/post-images/1593684426205.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/li&gt;
+&lt;li&gt;创建仓库，存放构建后的网站文件。创建一个公开仓库，名为&lt;strong&gt;用户名.github.io&lt;/strong&gt;。（将&lt;strong&gt;用户名&lt;/strong&gt;替换为你的 GitHub 用户名）&lt;/li&gt;
+&lt;li&gt;进入 Gridea 进行远程设置。按照&lt;a href=&#34;https://gridea.dev/gridea-start/&#34;&gt;教程&lt;/a&gt;示例进行设置，然后点击「检测远程链接」，进行配置检查，邮箱为注册github时使用的邮箱。&lt;/li&gt;
+&lt;li&gt;同步。点击 Gridea 中的 同步按钮即可。初次部署等待几分钟之后就可以去浏览器访问了，默认地址为你在第 7步所填写的域名（https://用户名.github.io）。到这里就完成一个静态博客的搭建了，可以写博客同步到你的域名了。以下为使用Freenom申请免费域名，Cloudflare域名解析；即可以使用你申请的免费域名（Freenom）访问你的Gridea博客。&lt;br&gt;
+附录：修改主题，打开官网，点击主题，点击下载，在github界面点击下载zip，下载完成后解压，修改文件名称为主题名称，将该文件夹放入Gridea主题文件夹，默认路径为（C:\Users\Desktop\Documents\Gridea\themes）&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h1 id=&#34;freenom&#34;&gt;Freenom&lt;/h1&gt;
+&lt;ol start=&#34;9&#34;&gt;
+&lt;li&gt;打开并注册Freenom&lt;a href=&#34;https://www.jianshu.com/p/e02371079daa&#34;&gt;注册参考链接&lt;/a&gt;&lt;br&gt;
+  打开&lt;a href=&#34;https://www.freenom.com/zu/index.html?lang=zu&#34;&gt;Freenom官网&lt;/a&gt;，在网站文本框输入你想要的域名（例如baidu.tk）然后点击“检查可用性”&lt;/li&gt;
+&lt;li&gt;更改周期（period）选择最长的免费时长12个月&lt;/li&gt;
+&lt;li&gt;输入邮箱，注册Freenom账号&lt;/li&gt;
+&lt;li&gt;进入邮箱查看Freenom发来的确认邮件&lt;/li&gt;
+&lt;li&gt;点击邮箱中的链接完成注册&lt;/li&gt;
+&lt;li&gt;进入我的域名（My Domains）查看刚刚注册的域名，到此Freenom完成&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h1 id=&#34;https修改&#34;&gt;HTTPS修改&lt;/h1&gt;
+&lt;ol start=&#34;15&#34;&gt;
+&lt;li&gt;打开github-点击注册的仓库名-点击设置-下拉找到Enforce HTTPS选中对话框（注：此步骤为）&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h1 id=&#34;cloudflare&#34;&gt;Cloudflare&lt;/h1&gt;
+&lt;ol start=&#34;16&#34;&gt;
+&lt;li&gt;Cloudflare域名解析，打开&lt;a href=&#34;https://www.cloudflare.com/&#34;&gt;官网&lt;/a&gt;，点击注册&lt;/li&gt;
+&lt;li&gt;输入邮箱创建账号Cloudflare会发送邮件到注册邮箱，登陆邮箱点击确认邮箱&lt;/li&gt;
+&lt;li&gt;点击添加节点（Add site），添加在Freenom中注册的免费域名，点击下一步&lt;/li&gt;
+&lt;li&gt;还是选择免费DNS&lt;/li&gt;
+&lt;li&gt;在&lt;strong&gt;类型&lt;/strong&gt;中选择CNAME；&lt;strong&gt;名称&lt;/strong&gt;中输入@；目标中输入你的github域名即（&lt;strong&gt;用户名&lt;/strong&gt;.github.io）&lt;/li&gt;
+&lt;li&gt;TTL选项默认选择&amp;quot;Auto&amp;quot;即可。&amp;quot;Proxied&amp;quot;选项可根据需求选择是只进行域名解析&amp;quot;DNS only&amp;quot;还是需要通过Cloudflare进行代理&amp;quot;Proxied&amp;quot;，完成以上设置后，点击&amp;quot;Add Record&amp;quot;&lt;/li&gt;
+&lt;li&gt;接着，在Cloudflare的Overview界面，有两个域名解析服务器的网址，复制这两个网址（复制cloudflare名称服务器NS值，打开&lt;strong&gt;Freenom&lt;/strong&gt;-登陆-点击&lt;strong&gt;services&lt;/strong&gt;,点击&lt;strong&gt;Management Tools&lt;/strong&gt;，点击&lt;strong&gt;Use custom nameservers (enter below)&lt;/strong&gt;，在Namesever 1中输入复制内容；以相同步骤复制第二个NS值填入Namesever 2）&lt;/li&gt;
+&lt;li&gt;复制完成后点击Change Namesevers 完成对域名替换&lt;/li&gt;
+&lt;li&gt;修改完成后，等待几分钟，会收到来自CloudFlare的邮件，提示更新成功，即完成Cloudflare域名解析的配置工作&lt;/li&gt;
+&lt;li&gt;结束&lt;br&gt;
+主要参考文献：&lt;a href=&#34;https://zhenhuizhang.tk/post/freenom-mian-fei-yu-ming-ji-cloudflare-yu-ming-jie-xi/&#34;&gt;渣渣晖のBlog&lt;/a&gt;&lt;br&gt;
+       &lt;a href=&#34;https://gridea.dev/gridea-start/&#34;&gt;Gridea简明教程&lt;/a&gt;&lt;br&gt;
+       &lt;a href=&#34;https://www.jianshu.com/p/e02371079daa&#34;&gt;Freenom教程&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+">Gridea简单教程+Freenom+Cloudflare</a>
+      </div>
+      
+      <div class="item">
+        <a class="result-title" style="opacity: 0;" href="https://lisonglin.tk/post/about/"" data-c="
+          &lt;blockquote&gt;
+&lt;p&gt;欢迎来到我的小站呀，很高兴遇见你！🤝&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;关于本站&#34;&gt;🏠 关于本站&lt;/h2&gt;
+&lt;h2 id=&#34;博主是谁&#34;&gt;👨‍💻 博主是谁&lt;/h2&gt;
+&lt;h2 id=&#34;兴趣爱好&#34;&gt;⛹ 兴趣爱好&lt;/h2&gt;
+&lt;h2 id=&#34;联系我呀&#34;&gt;📬 联系我呀&lt;/h2&gt;
+">关于</a>
+      </div>
+      
+      <div class="item">
+        <a class="result-title" style="opacity: 0;" href="https://lisonglin.tk/post/hello-gridea/"" data-c="
+          &lt;p&gt;👏  欢迎使用 &lt;strong&gt;Gridea&lt;/strong&gt; ！&lt;br&gt;
+✍️  &lt;strong&gt;Gridea&lt;/strong&gt; 一个静态博客写作客户端。你可以用它来记录你的生活、心情、知识、笔记、创意... ...&lt;/p&gt;
+&lt;!-- more --&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/getgridea/gridea&#34;&gt;Github&lt;/a&gt;&lt;br&gt;
+&lt;a href=&#34;https://gridea.dev/&#34;&gt;Gridea 主页&lt;/a&gt;&lt;br&gt;
+&lt;a href=&#34;http://fehey.com/&#34;&gt;示例网站&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;特性&#34;&gt;特性👇&lt;/h2&gt;
+&lt;p&gt;📝  你可以使用最酷的 &lt;strong&gt;Markdown&lt;/strong&gt; 语法，进行快速创作&lt;/p&gt;
+&lt;p&gt;🌉  你可以给文章配上精美的封面图和在文章任意位置插入图片&lt;/p&gt;
+&lt;p&gt;🏷️  你可以对文章进行标签分组&lt;/p&gt;
+&lt;p&gt;📋  你可以自定义菜单，甚至可以创建外部链接菜单&lt;/p&gt;
+&lt;p&gt;💻  你可以在 &lt;strong&gt;Windows&lt;/strong&gt;，&lt;strong&gt;MacOS&lt;/strong&gt; 或 &lt;strong&gt;Linux&lt;/strong&gt; 设备上使用此客户端&lt;/p&gt;
+&lt;p&gt;🌎  你可以使用 &lt;strong&gt;𝖦𝗂𝗍𝗁𝗎𝖻 𝖯𝖺𝗀𝖾𝗌&lt;/strong&gt; 或 &lt;strong&gt;Coding Pages&lt;/strong&gt; 向世界展示，未来将支持更多平台&lt;/p&gt;
+&lt;p&gt;💬  你可以进行简单的配置，接入 &lt;a href=&#34;https://github.com/gitalk/gitalk&#34;&gt;Gitalk&lt;/a&gt; 或 &lt;a href=&#34;https://github.com/SukkaW/DisqusJS&#34;&gt;DisqusJS&lt;/a&gt; 评论系统&lt;/p&gt;
+&lt;p&gt;🇬🇧  你可以使用&lt;strong&gt;中文简体&lt;/strong&gt;或&lt;strong&gt;英语&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;🌁  你可以任意使用应用内默认主题或任意第三方主题，强大的主题自定义能力&lt;/p&gt;
+&lt;p&gt;🖥  你可以自定义源文件夹，利用 OneDrive、百度网盘、iCloud、Dropbox 等进行多设备同步&lt;/p&gt;
+&lt;p&gt;🌱 当然 &lt;strong&gt;Gridea&lt;/strong&gt; 还很年轻，有很多不足，但请相信，它会不停向前 🏃&lt;/p&gt;
+&lt;p&gt;未来，它一定会成为你离不开的伙伴&lt;/p&gt;
+&lt;p&gt;尽情发挥你的才华吧！&lt;/p&gt;
+&lt;p&gt;😘 Enjoy~&lt;/p&gt;
+">Hello Gridea</a>
+      </div>
+      
+    </div>
+    <div class="page">
+      <div id="page_ul"></div>
+    </div>
+  </div>
+</div>
+<script>
+  !function () {
+    let searchMask = document.querySelector('#search_mask');
+    let result = document.querySelector('#result');
+    let items = document.querySelectorAll('.item');
+    let searchBox = document.querySelector('#search');
+    let statCount = document.querySelector('#stat_count');
+    let statTimes = document.querySelector('#stat_times');
+    let pageUl = document.querySelector('#page_ul');
+    let close = document.querySelector('#close');
+    
+    close.addEventListener('click', function() {
+      searchMask.style = 'display: none;'
+    })
+
+    let finds = [];
+    let contents = [];
+    let pageSize = 10;
+    items.forEach(item => {
+      let a = item.querySelector('a');
+      contents.push({
+        title: a.innerText,
+        details: a.dataset.c,
+        link: a.href
+      })
+      item.remove();
+    })
+
+    function insertStr(soure, start, count) {
+      let newStr = soure.substr(start, count);
+      return soure.slice(0, start) + '<em>' + newStr + '</em>' + soure.slice(start + count);
+    }
+
+    pageUl.addEventListener('click', function(event) {
+      let target = event.target;
+      if (target.__proto__ === HTMLSpanElement.prototype) {
+        appendResults(parseInt(target.dataset.i));
+      }
+    })
+
+    function appendResults(index) {
+      let htmlResult = '';
+      let start = index || 0;
+      let end = Math.min(start + pageSize, finds.length);
+      for (let i = start; i < end; i++) {
+        const current = finds[i];
+        let html = current.title;
+        let sum = 0;
+        let positions = current.positions;
+        positions.forEach(position => {
+          html = insertStr(html, position.start + sum, position.count);
+          sum += 9;
+        })
+        htmlResult += `<div class="item"><a class="result-title" href="${current.link}">${html}</a></div>`;
+      }
+      result.innerHTML = htmlResult;
+      pageUl.innerHTML = '';
+      let count = finds.length / pageSize;
+      let lis = '';
+      if (start !== 0) {
+        lis += `<span class="fa fa-angle-left" data-i='${start - 1}'></span>`;
+      }
+      for (let i = 0; i < count; i++) {
+        lis += `<span class='${i === start?'current':''}' data-i='${i}'>${i+1}</span>`;     
+      }
+      if (start+1 < count) {
+        lis += `<span class="fa fa-angle-right" data-i='${start+1}'></span>`;  
+      }
+      pageUl.innerHTML = lis;
+    }
+
+    function search(delay) {
+      let timer = null
+      return function () {
+        clearTimeout(timer)
+        timer = setTimeout(() => {
+          let start = Date.now();
+          let segments = searchBox.value.split(' ').filter(c => c != '');
+          if (segments.length <= 0) {
+            return;
+          }
+          finds = [];
+          let htmlResult = '';
+          contents.forEach(content => {
+            let title = content.title;
+            let positions = [];
+            let find = false;
+            segments.forEach((segment) => {
+              if (content.title.includes(segment)) {
+                find = true;
+                positions.push({
+                  start: content.title.indexOf(segment),
+                  count: segment.length
+                })
+              } else if (content.details.includes(segment)) {
+                find = true;
+              }
+            });
+            if (find) {
+              finds.push({
+                title: content.title,
+                link: content.link,
+                positions
+              });
+            }
+          })
+          appendResults(0);
+          statCount.textContent = finds.length;
+          statTimes.textContent = Date.now() - start;
+        }, delay)
+      }
+    }
+    searchBox.addEventListener('input', search(200));
+  }()
+</script>
+
+<input hidden id="copy" />
+<script>
+  !function () {
+    let times = document.querySelectorAll('.publish-time');
+    for (let i = 0; i < times.length; i++) {
+      let date = times[i].dataset.t;
+      let time = Math.floor((new Date().getTime() - new Date(date).getTime()) / 1000);
+      if (time < 60) {
+        str = time + '秒之前';
+      } else if (time < 3600) {
+        str = Math.floor(time / 60) + '分钟之前';
+      } else if (time >= 3600 && time < 86400) {
+        str = Math.floor(time / 3600) + '小时之前';
+      } else if (time >= 86400 && time < 259200) {
+        str = Math.floor(time / 86400) + '天之前';
+      } else {
+        str = times[i].textContent;
+      }
+      times[i].textContent = str;
+    }
+  }();
+</script>
+
+<script>
+  let language = '';
+  if (language !== '') {
+    let map = new Map();
+    if (language === 'en') {
+      map.set('search', 'Search');
+      map.set('category', 'Categories');
+      map.set('article', 'Articles');
+      map.set('tag', 'Tags');
+      map.set('top', 'Top');
+      map.set('publish', 'published');
+      map.set('minute', ' minutes');
+      map.set('read-more', 'Read More');
+      map.set('view', 'View');
+      map.set('words', ' words');
+      map.set('category-in', 'category in');
+      map.set('preview', 'Meta');
+      map.set('index', 'Toc');
+      map.set('no-archives', "You haven't created yet");
+      map.set('archives', " articles in total");
+      map.set('cloud-tags', " tags in total");
+      map.set('copyright', "Copyright: ");
+      map.set('author', "Author: ");
+      map.set('link', "Link: ");
+      map.set('leave-message', "Leave a message");
+      map.set('format', "Links Format");
+      map.set('site-name', "Name: ");
+      map.set('site-link', "Link: ");
+      map.set('site-desc', "Desc: ");
+      map.set('stat', " related results, taking ");
+      map.set('stat-time', " ms");
+      map.set('site-img', "Image: ");
+    }
+
+    if (map.size > 0) {
+      let lanElems = document.querySelectorAll('.language');
+      lanElems.forEach(elem => {
+        let lan = elem.dataset.lan, text = map.get(lan);
+        if (elem.__proto__ === HTMLInputElement.prototype) {
+          elem.placeholder = text
+        } else {
+          if (elem.dataset.count) {
+            text = elem.dataset.count + text;
+          }
+          elem.textContent = text;
+        }
+      })
+    }
+  }
+  //拿来主义(真香)^_^，Clipboard 实现摘自掘金 https://juejin.im/post/5aefeb6e6fb9a07aa43c20af
+  window.Clipboard = (function (window, document, navigator) {
+    var textArea,
+      copy;
+
+    // 判断是不是ios端
+    function isOS() {
+      return navigator.userAgent.match(/ipad|iphone/i);
+    }
+    //创建文本元素
+    function createTextArea(text) {
+      textArea = document.createElement('textArea');
+      textArea.value = text;
+      textArea.style.width = 0;
+      textArea.style.height = 0;
+      textArea.clientHeight = 0;
+      textArea.clientWidth = 0;
+      document.body.appendChild(textArea);
+    }
+    //选择内容
+    function selectText() {
+      var range,
+        selection;
+
+      if (isOS()) {
+        range = document.createRange();
+        range.selectNodeContents(textArea);
+        selection = window.getSelection();
+        selection.removeAllRanges();
+        selection.addRange(range);
+        textArea.setSelectionRange(0, 999999);
+      } else {
+        textArea.select();
+      }
+    }
+
+    //复制到剪贴板
+    function copyToClipboard() {
+      try {
+        document.execCommand("Copy")
+      } catch (err) {
+        alert("复制错误！请手动复制！")
+      }
+      document.body.removeChild(textArea);
+    }
+
+    copy = function (text) {
+      createTextArea(text);
+      selectText();
+      copyToClipboard();
+    };
+
+    return {
+      copy: copy
+    };
+  })(window, document, navigator);
+
+  function copyCode(e) {
+    if (e.srcElement.tagName === 'SPAN' && e.srcElement.classList.contains('copy-code')) {
+      let code = e.currentTarget.querySelector('code');
+      var text = code.innerText;
+      if (e.srcElement.textContent === '复制成功') {
+        return;
+      }
+      e.srcElement.textContent = '复制成功';
+      (function (elem) {
+        setTimeout(() => {
+          if (elem.textContent === '复制成功') {
+            elem.textContent = '复制代码'
+          }
+        }, 1000);
+      })(e.srcElement)
+      Clipboard.copy(text);
+    }
+  }
+
+  let pres = document.querySelectorAll('pre');
+  pres.forEach(pre => {
+    let code = pre.querySelector('code');
+    let copyElem = document.createElement('span');
+    copyElem.classList.add('copy-code');
+    copyElem.textContent = '复制代码';
+    pre.appendChild(copyElem);
+    pre.onclick = copyCode
+  })
+
+</script>
+<script src="/media/js/motion.js"></script>
+
+<script src="https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll/dist/smooth-scroll.polyfills.min.js"></script>
+<script>
+  var scroll = new SmoothScroll('a[href*="#"]', {
+    speed: 200
+  });
+</script>
+
+
+
+
+
+  <div class="snow-container"></div>
+  <script src="/media/js/bg/snow.js"></script>
+
+
 </html>
