@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://lisonglin.tk</id>
     <title>想不想该不该的博客</title>
-    <updated>2020-07-30T04:07:53.098Z</updated>
+    <updated>2020-08-11T09:12:47.042Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://lisonglin.tk"/>
     <link rel="self" href="https://lisonglin.tk/atom.xml"/>
@@ -10,6 +10,60 @@
     <logo>https://lisonglin.tk/images/avatar.png</logo>
     <icon>https://lisonglin.tk/favicon.ico</icon>
     <rights>All rights reserved 2020, 想不想该不该的博客</rights>
+    <entry>
+        <title type="html"><![CDATA[Zotero+zotfile+坚果云无限量空间备份你的论文库]]></title>
+        <id>https://lisonglin.tk/post/zoterozotfilejian-guo-yun-wu-xian-liang-kong-jian-bei-fen-ni-de-lun-wen-ku/</id>
+        <link href="https://lisonglin.tk/post/zoterozotfilejian-guo-yun-wu-xian-liang-kong-jian-bei-fen-ni-de-lun-wen-ku/">
+        </link>
+        <updated>2020-08-11T08:32:29.000Z</updated>
+        <summary type="html"><![CDATA[<p>  Zotero实现文献管理以及数据文件，zotfile为Zotero软件的文件管理插件可以自动提取pdf文件的论文名称、作者、年份、期刊等信息，坚果云作为pdf文献等的备份地址。</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>  Zotero实现文献管理以及数据文件，zotfile为Zotero软件的文件管理插件可以自动提取pdf文件的论文名称、作者、年份、期刊等信息，坚果云作为pdf文献等的备份地址。</p>
+<!-- more -->
+<h1 id="zotero文献管理zotfile文献信息提取坚果云文献存储">Zotero文献管理，zotfile文献信息提取，坚果云文献存储</h1>
+<p>  Zotero是一款开放性软件不用担心收费问题，其次该软件可以实现对论文添加自定义标签、总结等信息帮助你对文献进行总结和分类。但是Zotero云存储空间只有300M如果用来备份所有文件，只能备份很少量的论文。这里使用坚果云备份比较大的pdf文件使用Zotero只带云存储数据信息，这样将大大提高论文存储数量。配合zotfile软件插件使用，可以自动对文献内容提取，方便简洁快速对论文进行管理。<br>
+  zotero下面有一个存储文件的文件夹就叫zotero，里面的storage文件夹是存储附件的（除了数据文件（包括网页、标签、笔记等）的就叫附件，比如pdf什么的），是和zotero云存储同步的。</p>
+<p>  本地文件夹是自己定义的，主要是为了解决zotero的云存储不足的问题，所以会把附件都存在这里，也就是storage 里面的pdf。之后这个文件夹会同步到坚果云里面去，怎么做我后面会讲。</p>
+<p>  还有一个就是坚果云的本地同步文件，这个是一个虚地址（我是这样理解的），如果你是从本地同步上去的话其实是不占用本地磁盘空间的，你会发现如果你点击坚果云下面的back-zotero，他会直接跳转到你的本地文件夹jianguoyun/back-zotero里面去。</p>
+<p>  好了，现在你们应该懂了我到底是怎么做的了吧，其实就是把zotero 里面的附件放到本地文件夹，然后再同步到坚果云，而不是通过zotero直接的云同步Webdav直接同步到坚果云，为什么？因为我发现同步上去的文章会乱码。</p>
+<h1 id="zotero-zotfile-坚果云设置步骤">Zotero-zotfile-坚果云设置步骤</h1>
+<p>  下载Zotero以及坚果云软件到本地计算机</p>
+<h2 id="zotero设置">Zotero设置</h2>
+<h3 id="编辑首选项">编辑/首选项</h3>
+<figure data-type="image" tabindex="1"><img src="https://lisonglin.tk/post-images/1597136102516.jpg" alt="" loading="lazy"></figure>
+<h3 id="同步">同步</h3>
+<p>  <strong>这里的数据同步是你的zotero账号信息。</strong><br>
+  <strong>！！！注意文件同步全都不要勾！！！</strong><br>
+<img src="https://lisonglin.tk/post-images/1597136095632.jpg" alt="" loading="lazy"></p>
+<h3 id="高级">高级</h3>
+<p>  注意这里的数据存储位置：是你的zotero的数据存储位置，我这里是没有放在c盘放在了d盘。<br>
+<img src="https://lisonglin.tk/post-images/1597136222519.jpg" alt="" loading="lazy"></p>
+<h2 id="zotfile设置">zotfile设置：</h2>
+<h3 id="图篇左上角设置">图篇左上角设置</h3>
+<figure data-type="image" tabindex="2"><img src="https://lisonglin.tk/post-images/1597136358546.jpg" alt="" loading="lazy"></figure>
+<h3 id="常规设置">常规设置</h3>
+<figure data-type="image" tabindex="3"><img src="https://lisonglin.tk/post-images/1597136382050.jpg" alt="" loading="lazy"></figure>
+<h3 id="tablet-setting">tablet Setting</h3>
+<p><img src="https://lisonglin.tk/post-images/1597136486571.jpg" alt="" loading="lazy"><br>
+location of files 注意是你的本地文件夹的位置，比如我这里是D:\Application\jianguoyun\back-zotero，下面是你的本地文件夹的分类方式，这个可以在zotfile网站上查到相关分类标准。</p>
+<h3 id="renaming-rules">renaming rules</h3>
+<p>这个给主要是本地文件夹的命名规则。<br>
+<img src="https://lisonglin.tk/post-images/1597136535832.jpg" alt="" loading="lazy"></p>
+<h3 id="advanced-setting">advanced setting</h3>
+<figure data-type="image" tabindex="4"><img src="https://lisonglin.tk/post-images/1597136575497.jpg" alt="" loading="lazy"></figure>
+<h2 id="同步本地的文件夹到坚果云">同步本地的文件夹到坚果云</h2>
+<p>  需要先下载坚果云客户端，不然右键单击不会有这个选项。这个网上很少有文章这样做，我也是挖了好久才挖到，这个步骤非常关键，不然就没办法在坚果云上看见了，之后你会发现坚果云上面就有了这个文件夹，而且在本地也有一个虚拟的坚果云文件夹。<br>
+<img src="https://lisonglin.tk/post-images/1597136669519.jpg" alt="" loading="lazy"><br>
+PS：关于如何使用zotero：网上有大量教程可以参考我就不再赘述了。<br>
+参考地址：<br>
+<a href="https://zhuanlan.zhihu.com/p/93757626">zotero、zotfile、坚果云之间的爱恨情长</a><br>
+Zotero教程：<br>
+<a href="https://blog.csdn.net/misayaaaaa/article/details/53559689">标准论文参考文献添加方法——Zotero入门使用教程</a><br>
+<a href="https://blog.csdn.net/zhouchen1998/article/details/103298165">Zotero使用教程</a><br>
+<a href="https://www.zotero.org/support/zh/quick_start_guide">官方教程-quick_start_guide</a><br>
+<a href="https://www.ekexiu.com/shtml/a/20171025/102637.html">“Zotfile插件” — 让Zotero插上翅膀！</a></p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[ZeroTier One+远程桌面实现全平台远程连接]]></title>
         <id>https://lisonglin.tk/post/zerotier-oneyuan-cheng-zhuo-mian-shi-xian-quan-ping-tai-yuan-cheng-lian-jie/</id>
