@@ -2,14 +2,37 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://lisonglin.tk</id>
     <title>想不想该不该的博客</title>
-    <updated>2020-08-11T09:12:47.042Z</updated>
+    <updated>2021-03-03T13:00:37.209Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://lisonglin.tk"/>
     <link rel="self" href="https://lisonglin.tk/atom.xml"/>
     <subtitle>温故而知新</subtitle>
     <logo>https://lisonglin.tk/images/avatar.png</logo>
     <icon>https://lisonglin.tk/favicon.ico</icon>
-    <rights>All rights reserved 2020, 想不想该不该的博客</rights>
+    <rights>All rights reserved 2021, 想不想该不该的博客</rights>
+    <entry>
+        <title type="html"><![CDATA[Materials Studio使用总结]]></title>
+        <id>https://lisonglin.tk/post/di-yi-xing-yuan-li/</id>
+        <link href="https://lisonglin.tk/post/di-yi-xing-yuan-li/">
+        </link>
+        <updated>2021-03-03T12:52:54.000Z</updated>
+        <summary type="html"><![CDATA[<p><strong>材料计算软件Materials Studio常见操作说明</strong></p>
+]]></summary>
+        <content type="html"><![CDATA[<p><strong>材料计算软件Materials Studio常见操作说明</strong></p>
+<!-- more -->
+<p><strong>收敛性测试</strong><br>
+先不选optimize cell优化一次，再选optimize cell优化；kpoints,ecut的收敛测试可以选取一系列不同的kpoints，ecut计算并比较单点能。能量差达到差不多1mev就算是收敛了<br>
+结果除了检查能量变化之外，也最好检查一下原胞上的应力和原子间相互作用力是否已经收敛<br>
+<img src="https://lisonglin.tk/post-images/1614776367109.png" alt="" loading="lazy"><br>
+<img src="https://lisonglin.tk/post-images/1614776381086.png" alt="" loading="lazy"><br>
+<strong>optimize cell：</strong><br>
+在优化晶胞时，需要选上；在计算界面时就不需要勾选。<br>
+勾选上optimize cell后，晶格参数和原子占位都会发生变化，如果不选，晶格参数是不会发生变化的，但是，原子的位置还是会变化的。<br>
+<strong>移动分子</strong><br>
+按住键盘上的Shift+Alt键，再利用鼠标右键拖拽，就可以将选中的片段移动到合适的地方了<br>
+如果要进行比较细致的位置调整，可以按下键盘上的Shift+Alt+上下左右方向键，从而在各个方向上进行调整，放大结构可以使得每次调整更加精细</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Zotero+zotfile+坚果云无限量空间备份你的论文库]]></title>
         <id>https://lisonglin.tk/post/zoterozotfilejian-guo-yun-wu-xian-liang-kong-jian-bei-fen-ni-de-lun-wen-ku/</id>
