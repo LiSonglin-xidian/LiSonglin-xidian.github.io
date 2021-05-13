@@ -9,7 +9,7 @@
 <meta name="description" content="温故而知新">
 <meta name="theme-color" content="#000">
 <title>想不想该不该的博客</title>
-<link rel="shortcut icon" href="/favicon.ico?v=1614776394091">
+<link rel="shortcut icon" href="/favicon.ico?v=1620825943976">
 <link rel="stylesheet" href="/media/css/pisces.css">
 <link rel="stylesheet" href="/media/fonts/font-awesome.css">
 <link
@@ -190,13 +190,13 @@
     </div>
     <div class="sidebar-item-box">
       <a href="">
-        <span class="site-item-stat-count">6</span>
+        <span class="site-item-stat-count">7</span>
         <span class="site-item-stat-name language" data-lan="category">分类</span>
       </a>
     </div>
     <div class="sidebar-item-box">
       <a href="/tags/">
-        <span class="site-item-stat-count">6</span>
+        <span class="site-item-stat-count">7</span>
         <span class="site-item-stat-name language" data-lan="tag">标签</span>
       </a>
     </div>
@@ -496,12 +496,94 @@
     <div class="result" id="result">
       
       <div class="item">
+        <a class="result-title" style="opacity: 0;" href="https://lisonglin.tk/post/zotero-da-pei-scihub-jian-zhi-bu-yao-tai-xiang/"" data-c="
+          &lt;p&gt;Zotero论文管理，在网页上看到喜欢的论文直接保存到Zotero，然后自动在Scihub中搜索论文并下载到本地&lt;/p&gt;
+&lt;!-- more --&gt;
+&lt;p&gt;目前（截止2021.05.12），可用的Sci-Hub域名有以下几个：&lt;br&gt;
+&lt;a href=&#34;https://sci-hub.do&#34;&gt;https://sci-hub.do&lt;/a&gt;&lt;br&gt;
+&lt;a href=&#34;https://sci-hub.ren&#34;&gt;https://sci-hub.ren&lt;/a&gt;&lt;br&gt;
+&lt;a href=&#34;https://sci-hub.st&#34;&gt;https://sci-hub.st&lt;/a&gt;&lt;br&gt;
+&lt;a href=&#34;https://sci-hub.se&#34;&gt;https://sci-hub.se&lt;/a&gt;&lt;br&gt;
+如果你想及时获取Sci-Hub最新可用网址，可以到&lt;a href=&#34;https://tool.yovisun.com/scihub/&#34;&gt;SCI-HUB最新文献网址&lt;/a&gt;查看。&lt;br&gt;
+理论上以上四个都可以使用，大家可以自行更换完整代码中内容(https://sci-hub.ren/)。&lt;br&gt;
+顺便把我的完整代码贴出来：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;{
+    &amp;quot;name&amp;quot;:&amp;quot;Sci-Hub&amp;quot;,
+    &amp;quot;method&amp;quot;:&amp;quot;GET&amp;quot;,
+    &amp;quot;url&amp;quot;:&amp;quot;https://sci-hub.ren/{doi}&amp;quot;,
+    &amp;quot;mode&amp;quot;:&amp;quot;html&amp;quot;,
+    &amp;quot;selector&amp;quot;:&amp;quot;#pdf&amp;quot;,
+    &amp;quot;attribute&amp;quot;:&amp;quot;src&amp;quot;,
+    &amp;quot;automatic&amp;quot;:true
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;!-- more --&gt;
+&lt;h1 id=&#34;zotero自带的pdf搜索&#34;&gt;Zotero自带的PDF搜索&lt;/h1&gt;
+&lt;p&gt;从Zotero 5.0.56版本开始，Zotero迎来了PDF retrieval功能。&lt;br&gt;
+该功能会在你用Zotero Connector保存文献时，自动检查Unpaywall上是否有可供下载的免费文献。&lt;br&gt;
+假如你在网页端保存的文献是&lt;strong&gt;Open Access&lt;/strong&gt;的，Zotero Connector就会将PDF同文献条目一起抓取。&lt;br&gt;
+当然，对于已经在Zotero中却还没有PDF附件的文献条目，点击右键菜单中的Find Available PDF，即可下载文献，比如下面这样。&lt;br&gt;
+&lt;img src=&#34;https://lisonglin.tk/post-images/1620824193032.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+但是，毕竟Unpaywall只支持OA文献，而OA文献又只是少数。也就是说，通过Unpaywall无法解决付费文献的下载问题。&lt;br&gt;
+Zotero允许用户自定义PDF解析器（custom PDF resolvers），也就是说你可以将其他网站作为PDF解析器，来替代Unpaywall。&lt;br&gt;
+这为我们将Sci-Hub作为PDF resolver带来可能！&lt;br&gt;
+下面具体介绍如何将Sci-Hub作为PDF解析器！&lt;/p&gt;
+&lt;h1 id=&#34;设置sci-hub作为zotero的pdf解析器&#34;&gt;设置Sci-Hub作为Zotero的PDF解析器&lt;/h1&gt;
+&lt;p&gt;PDF resolvers的设置在Zotero的Config Editor中。&lt;br&gt;
+我们打开Zotero的首选项，进入Advanced--&amp;gt;Config Editor。&lt;br&gt;
+&lt;img src=&#34;https://lisonglin.tk/post-images/1620824334771.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+搜索&lt;code&gt;extensions.zotero.findPDFs.resolvers&lt;/code&gt;，如下&lt;br&gt;
+&lt;img src=&#34;https://lisonglin.tk/post-images/1620824382831.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+双击&lt;code&gt;extensions.zotero.findPDFs.resolvers&lt;/code&gt;，默认情况下是只有一对&lt;code&gt;[]&lt;/code&gt;。&lt;br&gt;
+删除&lt;code&gt;[]&lt;/code&gt;，并将以下代码粘贴进去。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;{
+    &amp;quot;name&amp;quot;:&amp;quot;Sci-Hub&amp;quot;,
+    &amp;quot;method&amp;quot;:&amp;quot;GET&amp;quot;,
+    &amp;quot;url&amp;quot;:&amp;quot;https://sci-hub.ren/{doi}&amp;quot;,
+    &amp;quot;mode&amp;quot;:&amp;quot;html&amp;quot;,
+    &amp;quot;selector&amp;quot;:&amp;quot;#pdf&amp;quot;,
+    &amp;quot;attribute&amp;quot;:&amp;quot;src&amp;quot;,
+    &amp;quot;automatic&amp;quot;:true
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;然后点击OK。&lt;br&gt;
+&lt;img src=&#34;https://lisonglin.tk/post-images/1620824514919.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+到此就成功将Sci-Hub配置为PDF解析器了，也就是说替代了默认的Unpaywall。&lt;br&gt;
+现在，无需重启Zotero，即可调用Sci-Hub免费下载文献了。&lt;/p&gt;
+&lt;h1 id=&#34;附录&#34;&gt;附录&lt;/h1&gt;
+&lt;p&gt;1.列出的Scihub的网址，理论上大家可以随意用一个。&lt;br&gt;
+2.本方法是通过文章的doi号进行下载的，所以论文必须要有doi才可以&lt;br&gt;
+3.&lt;code&gt;&amp;quot;automatic&amp;quot;:true&lt;/code&gt;，如果设置为true，Zotero会自动下载保存到Zotero中的文献的PDF。比如你用Zotero Connector保存了一些文献到Zotero，它便会自动帮你从Sci-Hub下载文献，并附在相应文献条目下。如果你不需要自动下载，可以设置为&lt;code&gt;&amp;quot;automatic&amp;quot;:false&lt;/code&gt;。&lt;/p&gt;
+&lt;h2 id=&#34;论文添加方法&#34;&gt;论文添加方法&lt;/h2&gt;
+&lt;p&gt;1.通过软件内doi号添加保存文献，自动下载PDF，，无需任何操作。（看不到进度条，下载速度取决于网速）&lt;br&gt;
+&lt;img src=&#34;https://lisonglin.tk/post-images/1620825302501.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+2.通过浏览器插件Zotero Connector保存的文献，会自动下载PDF，无需任何操作。（看不到进度条，下载速度取决于网速）&lt;br&gt;
+&lt;img src=&#34;https://lisonglin.tk/post-images/1620825523102.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+3.Find Available PDF：选中单篇或者多篇文献，手动点击右键菜单中的Find Available PDF，会弹出单独的窗口显示下载进度。同样，下载速度取决于网络速度。&lt;br&gt;
+&lt;img src=&#34;https://lisonglin.tk/post-images/1620825584086.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+到此，本文就介绍完了！&lt;/p&gt;
+&lt;h1 id=&#34;参考链接&#34;&gt;参考链接：&lt;/h1&gt;
+&lt;p&gt;&lt;a href=&#34;https://zhuanlan.zhihu.com/p/112141757&#34;&gt;知乎&lt;/a&gt;&lt;br&gt;
+&lt;a href=&#34;https://tool.yovisun.com/scihub/&#34;&gt;SCI-Hub论文下载可用网址链接&lt;/a&gt;&lt;/p&gt;
+">Zotero搭配Scihub简直不要太香</a>
+      </div>
+      
+      <div class="item">
+        <a class="result-title" style="opacity: 0;" href="https://lisonglin.tk/post/origin-shi-yong-zong-jie/"" data-c="
+          &lt;p&gt;输出论文用图片，图像格式修改等&lt;/p&gt;
+&lt;!-- more --&gt;
+&lt;p&gt;#输出文章用图&lt;/p&gt;
+">Origin 使用总结</a>
+      </div>
+      
+      <div class="item">
         <a class="result-title" style="opacity: 0;" href="https://lisonglin.tk/post/di-yi-xing-yuan-li/"" data-c="
           &lt;p&gt;&lt;strong&gt;材料计算软件Materials Studio常见操作说明&lt;/strong&gt;&lt;/p&gt;
 &lt;!-- more --&gt;
 &lt;p&gt;&lt;strong&gt;收敛性测试&lt;/strong&gt;&lt;br&gt;
 先不选optimize cell优化一次，再选optimize cell优化；kpoints,ecut的收敛测试可以选取一系列不同的kpoints，ecut计算并比较单点能。能量差达到差不多1mev就算是收敛了&lt;br&gt;
 结果除了检查能量变化之外，也最好检查一下原胞上的应力和原子间相互作用力是否已经收敛&lt;br&gt;
+&lt;img src=&#34;https://lisonglin.tk/post-images/1615190433984.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
 &lt;img src=&#34;https://lisonglin.tk/post-images/1614776367109.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
 &lt;img src=&#34;https://lisonglin.tk/post-images/1614776381086.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
 &lt;strong&gt;optimize cell：&lt;/strong&gt;&lt;br&gt;
@@ -509,7 +591,77 @@
 勾选上optimize cell后，晶格参数和原子占位都会发生变化，如果不选，晶格参数是不会发生变化的，但是，原子的位置还是会变化的。&lt;br&gt;
 &lt;strong&gt;移动分子&lt;/strong&gt;&lt;br&gt;
 按住键盘上的Shift+Alt键，再利用鼠标右键拖拽，就可以将选中的片段移动到合适的地方了&lt;br&gt;
-如果要进行比较细致的位置调整，可以按下键盘上的Shift+Alt+上下左右方向键，从而在各个方向上进行调整，放大结构可以使得每次调整更加精细&lt;/p&gt;
+如果要进行比较细致的位置调整，可以按下键盘上的Shift+Alt+上下左右方向键，从而在各个方向上进行调整，放大结构可以使得每次调整更加精细&lt;br&gt;
+&lt;strong&gt;恢复初始设置&lt;/strong&gt;&lt;br&gt;
+Tools-Settings Organizer                        class-reset&lt;br&gt;
+&lt;img src=&#34;https://lisonglin.tk/post-images/1615251770613.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+&lt;strong&gt;metal&lt;/strong&gt;&lt;br&gt;
+金属&lt;br&gt;
+&lt;strong&gt;cell optimization&lt;/strong&gt;&lt;br&gt;
+晶胞优化&lt;br&gt;
+&lt;strong&gt;job control&lt;/strong&gt;&lt;br&gt;
+核数选择以及&lt;br&gt;
+勾选optimize number of cores of the fly。动态调节核心&lt;br&gt;
+选择（speed）速度优化&lt;br&gt;
+&lt;img src=&#34;https://lisonglin.tk/post-images/1615252059339.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+&lt;strong&gt;转换为原胞提高计算速度&lt;/strong&gt;&lt;br&gt;
+选择是；如果是对界面进行优化，固定了下层原子了，就不需要转换为原胞了&lt;br&gt;
+&lt;strong&gt;转换为常规晶胞&lt;/strong&gt;&lt;br&gt;
+build-symmetry-conventional cell&lt;br&gt;
+显示设置-defult&lt;br&gt;
+&lt;strong&gt;表面切割&lt;/strong&gt;&lt;br&gt;
+切割厚度为周期性晶胞切割多厚，也即切割后的Z轴的长度&lt;br&gt;
+&lt;strong&gt;真空层厚度&lt;/strong&gt;&lt;br&gt;
+选择8埃米，实际计算中选择1nm到2nm之间，也即10埃米-20埃米&lt;br&gt;
+&lt;strong&gt;晶胞朝向更改&lt;/strong&gt;&lt;br&gt;
+lattice parameter-advanced-orientation standard朝向标准-C along Z，B in YZ plane C方向沿着Z轴，B方向在YZ平面内；keep fractional coordinates fixed during changes to the lattice （保持分数坐标固定）然后点击re-orient to standard&lt;br&gt;
+&lt;strong&gt;显示设置&lt;/strong&gt;&lt;br&gt;
+original-显示晶胞内有多少不同的原子&lt;br&gt;
+&lt;strong&gt;表面几何优化&lt;/strong&gt;&lt;br&gt;
+固定下层原子，仅对顶层原子进行优化modify-constraints-fix fractional position&lt;br&gt;
+&lt;strong&gt;气体分子优化&lt;/strong&gt;&lt;br&gt;
+由于气体分子不是晶胞，所以计算DOS时，DOS的k-point可以选择gamma点计算&lt;br&gt;
+气体分子不是晶体所以优化时也选择no，不转换为原胞提高速度&lt;br&gt;
+&lt;strong&gt;使用对称性简化模型提高计算&lt;/strong&gt;&lt;br&gt;
+find symmetry简化模型&lt;br&gt;
+&lt;strong&gt;态密度DOS&lt;/strong&gt;&lt;br&gt;
+metal是否为金属，charge是否带电荷；固体材料晶体的晶胞进行优化，固定体积和固定形状以及全优化，块体材料一般为全优化。&lt;br&gt;
+&lt;strong&gt;能带路径选择&lt;/strong&gt;&lt;br&gt;
+band structural，能带扫描路径选择；以及取值点步进值的选取&lt;br&gt;
+&lt;strong&gt;实验-计算&lt;/strong&gt;&lt;br&gt;
+&lt;img src=&#34;https://lisonglin.tk/post-images/1615271985972.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+&lt;strong&gt;不同表面的呈现&lt;/strong&gt;&lt;br&gt;
+材料不同的表面的呈现：提前预览不同表面的原子tool-Miller planes&lt;br&gt;
+&lt;strong&gt;表面结构的构建&lt;/strong&gt;&lt;br&gt;
+cleave surface：cleave plane（实验和文章说明那些晶面性质好）或者所有晶面的计算&lt;br&gt;
+top不同，裸露原子不同，形成的性质之不同&lt;br&gt;
+thickness，切面的厚度也即原子层数的不同（至少3-4层）&lt;br&gt;
+添加真空层15-20埃米消除C方向的影响&lt;br&gt;
+表面吸附计算：先进性超胞然后再放置小分子-消除周期结构的影响，两个小分子最小距离为8-10埃米&lt;br&gt;
+作用位点-作用方式的改变&lt;br&gt;
+创建拟合面：选中三个原子-绘制工具条best fit plane（第三个）然后测量距离（物理吸附化学吸附初步判断）一般放置初始距离为3.5-4埃米；或者2.0埃米加速优化等&lt;br&gt;
+键锤子与下表面：选中键-工具栏拟合线（best fit line）；西东原子分子栏，选择垂直与下表面&lt;br&gt;
+&lt;strong&gt;菱形晶胞改为矩形晶胞&lt;/strong&gt;&lt;br&gt;
+Build---symmetry---redefine lattice 打开如下图所示对话框，然后再红色款选部分设置&lt;br&gt;
+如下图，然后再点击 Redefine 即可。&lt;br&gt;
+A：1 1 0&lt;br&gt;
+B：-1 1 0&lt;br&gt;
+C：0 0 1&lt;br&gt;
+&lt;strong&gt;表面收敛性测试&lt;/strong&gt;&lt;br&gt;
+问题 3：我想问一下，castep 模块对体胞模型进行收敛性测试之后，切面的还是需要收敛性测&lt;br&gt;
+吗？还是说用体胞收敛后的参数也可以&lt;br&gt;
+解答：对晶胞结构进行了收敛性测试后，可以不再对表面结构进行测试，但是切面的原子层数&lt;br&gt;
+（即表面的厚度）还是要测试一下的。&lt;br&gt;
+&lt;strong&gt;population analysis&lt;/strong&gt;&lt;br&gt;
+CASTEP中的population analysis指的是布居分析吧。&lt;br&gt;
+1、这个是什么布居分析，好像有好多种，mulliken 什么的。&lt;br&gt;
+2、通过布居分析貌似可以得到每个原子的电荷量，请问还能得到别的吗？&lt;br&gt;
+3.mulliken布居分析就是CASTEP中的population analysis&lt;br&gt;
+布局分布可以：1看到电荷的转移，2通过比较反应前后bond population可以看出健的变化。选energy，然后property中选population analysis就行，可以把bond population加上。&lt;br&gt;
+&lt;strong&gt;表面优化-切面选择&lt;/strong&gt;&lt;br&gt;
+问题 2：请问我构建的 CuO 模型经过 VASP 优化之后变形特别厉害，固定 4 层，松弛 4 层，是&lt;br&gt;
+什么原因啊&lt;br&gt;
+解答：表面结构的终端面切的不对。&lt;/p&gt;
 ">Materials Studio使用总结</a>
       </div>
       
