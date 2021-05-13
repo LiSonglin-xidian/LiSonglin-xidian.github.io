@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://lisonglin.tk</id>
     <title>想不想该不该的博客</title>
-    <updated>2021-05-13T02:42:04.821Z</updated>
+    <updated>2021-05-13T02:43:29.389Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://lisonglin.tk"/>
     <link rel="self" href="https://lisonglin.tk/atom.xml"/>
@@ -16,9 +16,9 @@
         <link href="https://lisonglin.tk/post/zotero-da-pei-scihub-jian-zhi-bu-yao-tai-xiang/">
         </link>
         <updated>2021-05-12T12:35:30.000Z</updated>
-        <summary type="html"><![CDATA[<p>Zotero论文管理，在网页上看到喜欢的论文直接保存到Zotero，然后自动在Scihub中搜索论文并下载到本地</p>
+        <summary type="html"><![CDATA[<p>  Zotero论文管理，在网页上看到喜欢的论文直接保存到Zotero，然后自动在Scihub中搜索论文并下载到本地</p>
 ]]></summary>
-        <content type="html"><![CDATA[<p>Zotero论文管理，在网页上看到喜欢的论文直接保存到Zotero，然后自动在Scihub中搜索论文并下载到本地</p>
+        <content type="html"><![CDATA[<p>  Zotero论文管理，在网页上看到喜欢的论文直接保存到Zotero，然后自动在Scihub中搜索论文并下载到本地</p>
 <!-- more -->
 <p>目前（截止2021.05.12），可用的Sci-Hub域名有以下几个：<br>
 <a href="https://sci-hub.do">https://sci-hub.do</a><br>
