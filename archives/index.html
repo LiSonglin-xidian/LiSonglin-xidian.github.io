@@ -9,7 +9,7 @@
 <meta name="description" content="温故而知新">
 <meta name="theme-color" content="#000">
 <title>想不想该不该的博客</title>
-<link rel="shortcut icon" href="/favicon.ico?v=1620873807430">
+<link rel="shortcut icon" href="/favicon.ico?v=1625903080159">
 <link rel="stylesheet" href="/media/css/pisces.css">
 <link rel="stylesheet" href="/media/fonts/font-awesome.css">
 <link
@@ -752,7 +752,12 @@ CASTEP中的population analysis指的是布居分析吧。&lt;br&gt;
 &lt;strong&gt;表面优化-切面选择&lt;/strong&gt;&lt;br&gt;
 问题 2：请问我构建的 CuO 模型经过 VASP 优化之后变形特别厉害，固定 4 层，松弛 4 层，是&lt;br&gt;
 什么原因啊&lt;br&gt;
-解答：表面结构的终端面切的不对。&lt;/p&gt;
+解答：表面结构的终端面切的不对。&lt;br&gt;
+&lt;strong&gt;DFT+U计算过渡金属&lt;/strong&gt;&lt;br&gt;
+在使用+U model的过程中，我一直在思考这个U参数的本质，即U大一点意味着什么，小一点意味着什么？我们想，既然它是DFT能量能量对电荷密度变化的二阶导，那么有点类似与振动频率。在分子中，如果一根键的强度很高，那么振动频率就很高；如果键强度低，振动就弱，比如C=C双键就比C-C单键的振动频率高。类比的话，应该说U代表了d/f电荷密度随外部势（比如其它原子核对它的作用）的变化而变化的难易程度。如果U大，那么不容易变化；如果U小，则容易变化。在不使用+U模型时，那就是说U=0，这时d/f电子最容易受外部势的影响而左右摇摆，从宏观上来看，就是分布比较均匀，能带很宽。一旦+U以后，立即受到束缚，从而能带变窄。这和+U的实际作用正好一致。&lt;br&gt;
+进一步，Hubbard原子上的U参数与材料的金属性-非金属性的有一种联系：材料的金属性越强，U越小；材料非金属性越强，U越大。这从Cococcioni博士论文中的数据可以看出来：在金属态中，铁Fe的U为2.2, 铁磁FeO中为4.29， 而绝缘体Fe2SiO4中为 4.9/4.6. 所以，如果你得到的U很小，很可能意味着你的体系的金属性很强。当然，这并不意味着你可以不使用U，U虽小仍然可能大大改善能带的分布。&lt;br&gt;
+&amp;quot;在不使用+U模型时，那就是说U=0，这时d/f电子最容易受外部势的影响而左右摇摆，从宏观上来看，就是分布比较均匀，能带很宽。一旦+U以后，立即受到束缚，从而能带变窄。&amp;quot;&lt;br&gt;
+这句话容易引起歧义，补充一下，U越大，能带越宽，对应带隙越小；U越小，能带变窄，对应带隙越大。不过这只是一个简单理论分析，是否真的对所有材料都是如此，由于本人研究过的体系有限，不敢下定结论。欢迎补充。&lt;/p&gt;
 ">Materials Studio使用总结</a>
       </div>
       
